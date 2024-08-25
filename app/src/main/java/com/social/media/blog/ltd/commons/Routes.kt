@@ -4,6 +4,7 @@ import android.app.Activity
 import android.content.Intent
 import com.social.media.blog.ltd.ui.screen.intro.IntroActivity
 import com.social.media.blog.ltd.ui.screen.login.LoginActivity
+import com.social.media.blog.ltd.ui.screen.register.RegisterActivity
 
 object Routes {
 
@@ -14,6 +15,11 @@ object Routes {
 
     fun startLoginActivity(fromActivity: Activity) =
         Intent(fromActivity, LoginActivity::class.java).apply {
+            fromActivity.startActivity(this)
+        }
+
+    fun startRegisterActivity(fromActivity: Activity) =
+        Intent(fromActivity, RegisterActivity::class.java).apply {
             fromActivity.startActivity(this)
         }
 
