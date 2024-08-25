@@ -3,6 +3,7 @@ plugins {
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
     id 'kotlin-parcelize'
+    id 'com.google.gms.google-services'
 }
 
 android {
@@ -11,7 +12,7 @@ android {
 
     defaultConfig {
         applicationId "com.social.media.blog.ltd"
-        minSdk 21
+        minSdk 23
         targetSdk 34
         versionCode 100
         versionName "1.0.0"
@@ -74,4 +75,9 @@ dependencies {
     // Rx and Rx permission
     implementation 'com.github.tbruyelle:rxpermissions:0.12'
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    // firebase
+    implementation platform('com.google.firebase:firebase-bom:33.2.0')
+    implementation("com.google.firebase:firebase-auth")
+    implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-storage")
 }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "608620684279",
+    "project_id": "socialblog-4693a",
+    "storage_bucket": "socialblog-4693a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:608620684279:android:c6d99c49c273c51698c4f2",
+        "android_client_info": {
+          "package_name": "com.social.media.blog.ltd"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBA0i7dZS0ixnN-J14KvP31vid9Gg-HWlc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
