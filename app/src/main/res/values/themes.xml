@@ -1,0 +1,45 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.BaseProjectFlamingo" parent="Theme.Material3.DayNight.NoActionBar" />
+
+    <style name="AdsAppTheme" parent="Theme.AppCompat.Light"/>
+
+    <style name="Theme.BaseProjectFlamingo" parent="Base.Theme.BaseProjectFlamingo" />
+
+    <style name="AppTheme.Ads" parent="@style/AdsAppTheme">
+        <item name="android:textSize">11.0sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:background">@drawable/ic_ads_shimmer</item>
+        <item name="android:paddingLeft">3.0dip</item>
+        <item name="android:paddingRight">6.0dip</item>
+        <item name="android:paddingBottom">1.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">15.0px</item>
+        <item name="android:minHeight">15.0px</item>
+        <item name="android:text">Ad</item>
+    </style>
+
+    <style name="AppTheme.Ads2" parent="@style/AdsAppTheme">
+        <item name="android:textSize">11.0sp</item>
+        <item name="android:textColor">#ffffff</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_gravity">left</item>
+        <item name="android:paddingLeft">3.0dip</item>
+        <item name="android:paddingRight">6.0dip</item>
+        <item name="android:paddingBottom">1.0dip</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">15.0px</item>
+        <item name="android:minHeight">15.0px</item>
+        <item name="android:text">Ad</item>
+    </style>
+
+    <style name="ThemeDialog" parent="android:Theme.Holo.Dialog">
+        <item name="android:windowMinWidthMajor">85%</item>
+        <item name="android:windowMinWidthMinor">85%</item>
+        <item name="android:backgroundDimAmount">0.5</item>
+    </style>
+</resources>

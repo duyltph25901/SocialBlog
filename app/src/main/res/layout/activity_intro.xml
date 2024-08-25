@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.screen.intro.IntroActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toTopOf="@+id/frAds"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_goneMarginBottom="@dimen/_50sdp">
+
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/vpg2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/llCircle" />
+
+
+            <LinearLayout
+                android:id="@+id/llCircle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_marginHorizontal="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_2sdp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                tools:ignore="SmallSp">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/indicator1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_ob_selected" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/indicator2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:src="@drawable/ic_ob_un_selected" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/indicator3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/ic_ob_un_selected" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/indicator4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginHorizontal="@dimen/_5sdp"
+                    android:src="@drawable/ic_ob_un_selected" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/textNext"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_medium"
+                    android:gravity="center"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_2sdp"
+                    android:text="@string/next"
+                    android:textColor="@color/text_dark"
+                    android:textSize="@dimen/_14ssp" />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+        <FrameLayout
+            android:id="@+id/frAds"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="5dp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <include
+                android:id="@+id/shimmerAds"
+                layout="@layout/layout_ads_shimmer_native_large" />
+        </FrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
