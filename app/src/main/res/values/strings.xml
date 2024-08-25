@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
     <string name="app_name">Social <font color="#00DDB3">Blogger</font></string>
     <string name="next">Next</string>
     <string name="title_ob_1">Revamp your mobile typing experience with Keyboard Font &amp; Theme!</string>
@@ -16,4 +16,9 @@
     <string name="register">Register</string>
     <string name="your_name_here">your_name_here</string>
     <string name="term_of_policy">Term of Policy</string>
+    <string name="this_feature_will_be_released_soon">This feature will be released soon!</string>
+    <string name="this_field_cannot_be_left_blank">This field cannot be left blank!</string>
+    <string name="invalid_email">Invalid email!</string>
+    <string name="password_minimum_six_characters">Password minimum 6 characters!</string>
+    <string name="wait_a_moment" tools:ignore="TypographyEllipsis">Wait a moment...</string>
 </resources>
