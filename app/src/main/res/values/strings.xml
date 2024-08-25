@@ -5,4 +5,15 @@
     <string name="title_ob_2">Customize your keyboard easily by choosing from a wide array of fonts and themes</string>
     <string name="title_ob_3">DIY keyboard - Let your personality shine through every keystroke!</string>
     <string name="title_ob_4">Thousands of free keyboard background templates</string>
+    <string name="please_tell_me_who_you_are">Please tell me who you are</string>
+    <string name="login">Login</string>
+    <string name="example_email_gmail_dot_com">example_email@gmail.com</string>
+    <string name="you_don_t_have_an_account">You don\'t have an account?</string>
+    <string name="register_account">Register Account</string>
+    <string name="or_login_with">Or Login With</string>
+    <string name="password">password</string>
+    <string name="register_an_account_to_continue">Register an account to continue!</string>
+    <string name="register">Register</string>
+    <string name="your_name_here">your_name_here</string>
+    <string name="term_of_policy">Term of Policy</string>
 </resources>

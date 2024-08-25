@@ -4,8 +4,12 @@
     <color name="white">#FFFFFFFF</color>
 
     <color name="primary">#00DDB3</color>
+    <color name="gray95">#959595</color>
     <color name="text_dark">#232323</color>
+    <color name="text_gray">#959595</color>
+    <color name="text_green">#00DDB3</color>
     <color name="black_al_60">#99000000</color>
     <color name="lightTransparent">#16000000</color>
     <color name="colorAds">#00DDB3</color>
+    <color name="stockCard">#5E58595A</color>
 </resources>
