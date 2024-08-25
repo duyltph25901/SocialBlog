@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/icBack"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_margin="@dimen/_16sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/animRegister"
+            android:layout_width="@dimen/_100sdp"
+            android:layout_height="@dimen/_100sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:scaleType="centerCrop"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/icBack"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true"
+            app:lottie_rawRes="@raw/anim_register" />
+
+        <TextView
+            android:id="@+id/textRegisterToContinue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/_8sdp"
+            android:fontFamily="@font/font_regular"
+            android:text="@string/register_an_account_to_continue"
+            android:textColor="@color/text_gray"
+            app:layout_constraintBottom_toBottomOf="@id/animRegister"
+            app:layout_constraintEnd_toStartOf="@id/animRegister" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="#80959595"
+            app:layout_constraintEnd_toEndOf="@id/textRegisterToContinue"
+            app:layout_constraintStart_toStartOf="@id/textRegisterToContinue"
+            app:layout_constraintTop_toBottomOf="@id/textRegisterToContinue" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/_8sdp"
+            android:fontFamily="@font/font_extra_bold"
+            android:text="@string/register"
+            android:textColor="@color/text_green"
+            android:textSize="@dimen/_24ssp"
+            app:layout_constraintBottom_toTopOf="@id/textRegisterToContinue"
+            app:layout_constraintEnd_toEndOf="@id/textRegisterToContinue" />
+
+        <EditText
+            android:id="@+id/inputEmailAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_32sdp"
+            android:background="@drawable/bg_input"
+            android:drawableStart="@drawable/ic_mail"
+            android:drawablePadding="@dimen/_8sdp"
+            android:drawableTint="@color/primary"
+            android:hint="@string/example_email_gmail_dot_com"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:lines="1"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:textColor="@color/text_dark"
+            android:textColorHint="@color/text_gray"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintTop_toBottomOf="@id/animRegister"
+            tools:ignore="Autofill,UnusedAttribute" />
+
+        <EditText
+            android:id="@+id/inputUserName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/bg_input"
+            android:drawableStart="@drawable/ic_user"
+            android:drawablePadding="@dimen/_8sdp"
+            android:drawableTint="@color/primary"
+            android:hint="@string/your_name_here"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress"
+            android:lines="1"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:textColor="@color/text_dark"
+            android:textColorHint="@color/text_gray"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintTop_toBottomOf="@id/inputEmailAddress"
+            tools:ignore="Autofill,UnusedAttribute" />
+
+        <EditText
+            android:id="@+id/inputPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:background="@drawable/bg_input"
+            android:drawableStart="@drawable/ic_password"
+            android:drawablePadding="@dimen/_8sdp"
+            android:drawableTint="@color/primary"
+            android:hint="@string/password"
+            android:imeOptions="actionDone"
+            android:inputType="textPassword"
+            android:lines="1"
+            android:paddingHorizontal="@dimen/_12sdp"
+            android:paddingVertical="@dimen/_10sdp"
+            android:textColor="@color/text_dark"
+            android:textColorHint="@color/text_gray"
+            android:textSize="@dimen/_12ssp"
+            app:layout_constraintTop_toBottomOf="@id/inputUserName"
+            tools:ignore="Autofill,UnusedAttribute" />
+
+        <FrameLayout
+            android:id="@+id/frNativeSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/bg_ads_shimmer_native_small"
+            android:elevation="@dimen/_3sdp"
+            android:orientation="vertical"
+            android:visibility="visible"
+            app:layout_constraintTop_toBottomOf="@id/inputPassword">
+
+            <include
+                android:id="@+id/shimmerAds"
+                layout="@layout/layout_ads_shimmer_native_small" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/buttonRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:background="@drawable/bg_green"
+            android:elevation="@dimen/_4sdp"
+            android:fontFamily="@font/font_bold"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_10sdp"
+            android:text="@string/register"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintTop_toBottomOf="@id/frNativeSmall" />
+
+        <TextView
+            android:id="@+id/textTermOfPolicy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_8sdp"
+            android:text="@string/term_of_policy"
+            android:textColor="@color/text_green"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@id/buttonRegister"
+            app:layout_constraintStart_toStartOf="@id/buttonRegister"
+            app:layout_constraintTop_toBottomOf="@id/buttonRegister" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="-5dp"
+            android:layout_marginEnd="-5dp"
+            android:background="#33959595"
+            app:layout_constraintEnd_toEndOf="@id/textTermOfPolicy"
+            app:layout_constraintStart_toStartOf="@id/textTermOfPolicy"
+            app:layout_constraintTop_toBottomOf="@id/textTermOfPolicy" />
+
+        <FrameLayout
+            android:id="@+id/frBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <include layout="@layout/layout_banner_control" />
+        </FrameLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#33959595"
+            app:layout_constraintBottom_toTopOf="@id/frBanner" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
