@@ -21,4 +21,8 @@
     <string name="invalid_email">Invalid email!</string>
     <string name="password_minimum_six_characters">Password minimum 6 characters!</string>
     <string name="wait_a_moment" tools:ignore="TypographyEllipsis">Wait a moment...</string>
+    <string name="accept">Accept</string>
+    <string name="please_click_the_agree_button">Please click the agree button!</string>
+    <string name="account_registration_successful">Account registration successful!</string>
+    <string name="no_network_connection">No network connection!</string>
 </resources>
