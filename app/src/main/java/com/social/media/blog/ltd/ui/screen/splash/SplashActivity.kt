@@ -5,6 +5,7 @@ import android.os.Handler
 import android.os.Looper
 import com.social.media.blog.ltd.commons.AppConst.SPLASH_DELAY_TIME_MS_TYPE
 import com.social.media.blog.ltd.commons.Routes.startIntroActivity
+import com.social.media.blog.ltd.commons.SharedUtils
 import com.social.media.blog.ltd.databinding.ActivitySplashBinding
 import com.social.media.blog.ltd.ui.base.BaseActivity
 
@@ -14,6 +15,7 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
         ActivitySplashBinding.inflate(layoutInflater)
 
     override fun initView() {
+        initShared()
         goToIntroActivity()
     }
 
@@ -21,4 +23,6 @@ class SplashActivity : BaseActivity<ActivitySplashBinding>() {
         startIntroActivity(this)
         finish()
     }, SPLASH_DELAY_TIME_MS_TYPE)
+
+    private fun initShared() = SharedUtils.init(this)
 }
