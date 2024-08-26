@@ -2,6 +2,7 @@ package com.social.media.blog.ltd.commons
 
 import android.app.Activity
 import android.content.Intent
+import com.social.media.blog.ltd.ui.screen.home.HomeActivity
 import com.social.media.blog.ltd.ui.screen.intro.IntroActivity
 import com.social.media.blog.ltd.ui.screen.login.LoginActivity
 import com.social.media.blog.ltd.ui.screen.register.RegisterActivity
@@ -20,6 +21,11 @@ object Routes {
 
     fun startRegisterActivity(fromActivity: Activity) =
         Intent(fromActivity, RegisterActivity::class.java).apply {
+            fromActivity.startActivity(this)
+        }
+
+    fun startHomeActivity(fromActivity: Activity) =
+        Intent(fromActivity, HomeActivity::class.java).apply {
             fromActivity.startActivity(this)
         }
 
