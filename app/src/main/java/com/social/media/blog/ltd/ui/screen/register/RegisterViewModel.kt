@@ -18,9 +18,11 @@ class RegisterViewModel : ViewModel() {
 
     private val _isLoadingNetWork = MutableLiveData<Boolean>()
     private val _isInsertSuccess = MutableLiveData<Boolean>()
+    private val _messageErrorRegister = MutableLiveData<String>("")
 
     val isLoadingNetwork: LiveData<Boolean> = _isLoadingNetWork
     val isInsertSuccess: LiveData<Boolean> = _isInsertSuccess
+    val messageErrorRegister: LiveData<String> = _messageErrorRegister
 
     private val exceptionHandler = CoroutineExceptionHandler { _, _ ->
 
@@ -29,11 +31,17 @@ class RegisterViewModel : ViewModel() {
     fun register(email: String, password: String, userName: String) =
         viewModelScope.launch(Dispatchers.IO + exceptionHandler) {
             _isLoadingNetWork.postValue(true)
-            val userAfterRegister = registerAuthentication(email, password)
-            userAfterRegister?.let { userFirebaseAuth ->
-                val userDto =
-                    getUserDtoFromUserFirebaseAuthentication(userFirebaseAuth, userName, password)
-                _isInsertSuccess.postValue(registerAccountRealTimeDb(userDto))
+            val resultAuthentication = registerAuthentication(email, password)
+            val messageError = resultAuthentication.first
+            val userAfterRegister = resultAuthentication.second
+            if (messageError != null) {
+                _messageErrorRegister.postValue(messageError.toString())
+            } else {
+                userAfterRegister?.let { userFirebaseAuth ->
+                    val userDto =
+                        getUserDtoFromUserFirebaseAuthentication(userFirebaseAuth, userName, password)
+                    _isInsertSuccess.postValue(registerAccountRealTimeDb(userDto))
+                }
             }
             _isLoadingNetWork.postValue(false)
 
@@ -43,15 +51,13 @@ class RegisterViewModel : ViewModel() {
     private suspend fun registerAuthentication(
         email: String,
         password: String
-    ): FirebaseUser? =
+    ): Pair<String?, FirebaseUser?> =
         suspendCoroutine { continuation ->
             auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener { task ->
-                    if (task.isSuccessful) {
-                        auth.currentUser?.let {
-                            continuation.resume(it)
-                        }
-                    } else continuation.resume(null)
+                .addOnFailureListener {
+                    continuation.resume(Pair(it.message.toString(), null))
+                }.addOnSuccessListener {
+                    continuation.resume(Pair(null, it.user!!))
                 }
         }
 
@@ -80,4 +86,6 @@ class RegisterViewModel : ViewModel() {
             email = userFirebase.email ?: "",
             password = password,
         )
+
+    fun clearMessageErrorRegister() = _messageErrorRegister.postValue("")
 }
