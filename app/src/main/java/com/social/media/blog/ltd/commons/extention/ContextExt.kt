@@ -2,6 +2,8 @@ package com.social.media.blog.ltd.commons.extention
 
 import android.content.Context
 import android.widget.Toast
+import com.social.media.blog.ltd.commons.ConvertUtils.convertJsonToObjectConvertUtils
+import com.social.media.blog.ltd.commons.ConvertUtils.convertObjectToJsonConvertUtils
 import java.util.Locale
 import java.util.regex.Pattern
 
@@ -37,3 +39,8 @@ fun Context.validateEmail(email: String): Boolean {
 }
 
 fun Context.validatePassword(password: String): Boolean = password.length >= 6
+
+fun <T> Context.convertObjectToJson(obj: T): String = convertObjectToJsonConvertUtils(obj = obj)
+
+fun <T> Context.convertJsonToObject(json: String, classOfT: Class<T>): T? =
+    convertJsonToObjectConvertUtils(json = json, classOfT = classOfT)
