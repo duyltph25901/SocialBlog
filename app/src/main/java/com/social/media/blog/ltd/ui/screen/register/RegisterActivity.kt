@@ -30,58 +30,79 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>() {
         dialogAcceptPolicy = AcceptedTermOfServiceDialog(this)
     }
 
-    override fun initView() = binding.apply {
-
-    }
-
     override fun clickViews() = binding.apply {
         icBack.click { finish() }
         buttonRegister.click { eventRegister() }
-        textTermOfPolicy.click { dialogTermOfPolicy.show() }
+        textTermOfPolicy.click { showDialogTermOfPolicy() }
     }
 
     override fun observerDataSource() = viewModel.apply {
         isLoadingNetwork.observe(this@RegisterActivity) { isLoading ->
-            if (isLoading) loadingDialog.show() else loadingDialog.cancel()
+            if (isLoading) showDialogLoading() else hideDialogLoading()
         }
 
         isInsertSuccess.observe(this@RegisterActivity) { isSuccess ->
             if (isSuccess) {
-                binding.inputUserName.text.clear()
-                binding.inputPassword.text.clear()
-                binding.inputEmailAddress.text.clear()
-                toastMessageRes(R.string.account_registration_successful)
+                clearInputField()
+                showMessageRegisterAccountSuccess()
             }
         }
 
         messageErrorRegister.observe(this@RegisterActivity) { message ->
-            if (message.isNotEmpty()) toastMessage(message)
+            if (message.isNotEmpty()) showErrorMessage(message)
             clearMessageErrorRegister()
         }
     }
 
     private fun eventRegister() {
-        val email = binding.inputEmailAddress.text.toString().trim()
-        val userName = binding.inputUserName.text.toString().trim()
-        val password = binding.inputPassword.text.toString().trim()
-        val isInputNull = email.isEmpty() || userName.isEmpty() || password.isEmpty()
+        val email = getEmail()
+        val userName = getUserName()
+        val password = getPassword()
+        val isInputNull = isStrEmpty(email, password, userName)
         val isEmail = validateEmail(email)
         val isPassword = validatePassword(password)
 
         if (!isNetworkAvailable(this)) {
-            toastMessageRes(R.string.no_network_connection)
+            showMessageNoInternet()
             return
         }; if (isInputNull) {
-            toastMessageRes(R.string.this_field_cannot_be_left_blank)
+            showMessageNotNull()
             return
         }; if (!isEmail) {
-            toastMessageRes(R.string.invalid_email)
+            showMessageEmailInvalid()
             return
         }; if (!isPassword) {
-            toastMessageRes(R.string.password_minimum_six_characters)
+            showMessagePasswordInvalid()
             return
         }
 
+        showDialogAcceptPolicy(email = email, password = password, userName = userName)
+    }
+
+    private fun showDialogTermOfPolicy() = dialogTermOfPolicy.show()
+
+    private fun getEmail() = binding.inputEmailAddress.text.toString().trim()
+
+    private fun getUserName() = binding.inputUserName.text.toString().trim()
+
+    private fun getPassword() = binding.inputPassword.text.toString().trim()
+
+    private fun isStrEmpty(email: String, userName: String, password: String) =
+        email.isEmpty() || userName.isEmpty() || password.isEmpty()
+
+    private fun showMessageNoInternet() =
+        toastMessageRes(R.string.no_network_connection)
+
+    private fun showMessageNotNull() =
+        toastMessageRes(R.string.this_field_cannot_be_left_blank)
+
+    private fun showMessageEmailInvalid() =
+        toastMessageRes(R.string.invalid_email)
+
+    private fun showMessagePasswordInvalid() =
+        toastMessageRes(R.string.password_minimum_six_characters)
+
+    private fun showDialogAcceptPolicy(email: String, password: String, userName: String) =
         dialogAcceptPolicy.apply {
             eventClickDone = {
                 val jobRegisterAccount = viewModel.register(email, password, userName)
@@ -90,5 +111,24 @@ class RegisterActivity : BaseActivity<ActivityRegisterBinding>() {
                 }
             }
         }.show()
+
+    private fun showDialogLoading() = loadingDialog.show()
+
+    private fun hideDialogLoading() = loadingDialog.cancel()
+
+    private fun showErrorMessage(message: String) = toastMessage(message)
+
+    private fun showMessageRegisterAccountSuccess() = toastMessageRes(R.string.account_registration_successful)
+
+    private fun clearInputUserName() = binding.inputUserName.text.clear()
+
+    private fun clearInputPassword() = binding.inputPassword.text.clear()
+
+    private fun clearInputEmail() = binding.inputEmailAddress.text.clear()
+
+    private fun clearInputField()  {
+        clearInputUserName()
+        clearInputPassword()
+        clearInputEmail()
     }
 }
