@@ -25,13 +25,17 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initVariables()
         initViews()
+        fetchDataSrc()
         onResizeViews()
         onClickViews()
         observerData()
     }
 
     abstract fun getLayoutFragment(): Int
+
+    open fun initVariables() {}
 
     open fun initViews() {}
 
@@ -40,6 +44,8 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
     open fun onResizeViews() {}
 
     open fun observerData() {}
+
+    open fun fetchDataSrc() {}
 
     open fun showActivity(act: Class<*>, bundle: Bundle? = null) {
         val intent = Intent(activity, act)
