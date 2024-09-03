@@ -3,21 +3,14 @@ package com.social.media.blog.ltd.ui.screen.crop_img
 import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
-import android.graphics.BitmapFactory
 import android.net.Uri
-import android.os.Handler
-import android.os.Looper
-import android.os.TransactionTooLargeException
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.canhub.cropper.CropImageView
-import com.social.media.blog.ltd.commons.AppConst.KEY_IMAGE_BITMAP_AFTER_CROP
 import com.social.media.blog.ltd.commons.AppConst.KEY_IMAGE_PATH_AFTER_CROP
 import com.social.media.blog.ltd.commons.AppConst.KEY_IMAGE_URI_TO_CROP
 import com.social.media.blog.ltd.commons.AppConst.KEY_PATH_IMAGE_TO_CROP
 import com.social.media.blog.ltd.commons.extention.click
-import com.social.media.blog.ltd.commons.extention.toastMessage
 import com.social.media.blog.ltd.databinding.ActivityCropImageBinding
 import com.social.media.blog.ltd.ui.base.BaseActivity
 import com.social.media.blog.ltd.ui.dialog.LoadingResponseDialog
@@ -25,7 +18,6 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.io.ByteArrayInputStream
 import java.io.ByteArrayOutputStream
 
 class CropImageActivity : BaseActivity<ActivityCropImageBinding>() {
