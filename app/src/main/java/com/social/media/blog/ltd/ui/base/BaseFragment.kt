@@ -1,6 +1,7 @@
 package com.social.media.blog.ltd.ui.base
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -53,4 +54,6 @@ abstract class BaseFragment<VB : ViewDataBinding> : Fragment() {
         startActivity(intent)
         /*activity?.overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left)*/
     }
+
+    open fun isThisTiramisuVersionOrHigher() = Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
 }
