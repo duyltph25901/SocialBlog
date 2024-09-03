@@ -81,5 +81,9 @@ dependencies {
     implementation("com.google.firebase:firebase-database")
     implementation("com.google.firebase:firebase-storage")
     // gson
-    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation 'com.google.code.gson:gson:2.11.0'
+    // rounded image view
+    implementation 'com.makeramen:roundedimageview:2.3.0'
+    // ucrop
+    implementation 'com.vanniktech:android-image-cropper:4.6.0'
 }
