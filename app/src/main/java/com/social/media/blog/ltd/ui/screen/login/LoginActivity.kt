@@ -1,6 +1,5 @@
 package com.social.media.blog.ltd.ui.screen.login
 
-import android.util.Log
 import androidx.activity.viewModels
 import com.social.media.blog.ltd.R
 import com.social.media.blog.ltd.commons.Routes.startHomeActivity
@@ -106,13 +105,14 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
         callBack: (user: UserModelDTO?) -> Unit
     ) =
         viewModel.apply {
-            searchEmailAndPassword(email = email, password = password, list = listUsers)
-            callBack.invoke(userDtoAfterSearch.value)
+            val userAfterSearch = searchEmailAndPassword(email = email, password = password, list = listUsers)
+            callBack.invoke(userAfterSearch)
         }
 
     private fun onUserFound(user: UserModelDTO) {
         cacheUserToSharedPref(user)
         startHomeActivity(this)
+        removeEventListenerFirebase()
         finish()
     }
 
@@ -123,4 +123,6 @@ class LoginActivity : BaseActivity<ActivityLoginBinding>() {
             clear()
             addAll(list)
         }
+
+    private fun removeEventListenerFirebase() = viewModel.stopListeningUserData()
 }
