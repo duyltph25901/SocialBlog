@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#001262"
+            android:fontFamily="@font/font_semi_bold"
+            android:paddingVertical="@dimen/_12sdp"
+            android:text="@string/choose_image"
+            android:textAlignment="center"
+            android:textColor="#FF8600"
+            android:textSize="@dimen/_24ssp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icBack"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="@id/textTitle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/textTitle"
+            app:tint="@color/white" />
+
+        <FrameLayout
+            android:id="@+id/frBanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <include layout="@layout/layout_banner_control" />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/viewSupported"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#33959595"
+            app:layout_constraintBottom_toTopOf="@id/frBanner" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rcvImage"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            tools:listitem="@layout/item_image"
+            android:layout_marginTop="@dimen/_8sdp"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:layout_constraintBottom_toTopOf="@id/viewSupported"
+            app:layout_constraintTop_toBottomOf="@id/textTitle"
+            android:clipToPadding="false"
+            android:clipChildren="false"
+            app:spanCount="2" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
