@@ -56,6 +56,17 @@
                     app:layout_constraintTop_toTopOf="parent"
                     tools:listitem="@layout/item_post_1" />
 
+                <ProgressBar
+                    android:id="@+id/loadingPost1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintBottom_toBottomOf="@id/rcv2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/rcv2"
+                    android:elevation="@dimen/_10sdp"
+                    android:indeterminateTint="@color/primary"/>
+
                 <TextView
                     android:id="@+id/textRecentNew"
                     android:layout_width="wrap_content"

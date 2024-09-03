@@ -1,6 +1,7 @@
 package com.social.media.blog.ltd.ui.screen.home.frg
 
 import androidx.fragment.app.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.social.media.blog.ltd.R
 import com.social.media.blog.ltd.commons.SharedUtils
 import com.social.media.blog.ltd.commons.extention.convertObjectToJson
@@ -8,7 +9,9 @@ import com.social.media.blog.ltd.commons.extention.goneView
 import com.social.media.blog.ltd.commons.extention.visibleView
 import com.social.media.blog.ltd.databinding.FragmentHomeBinding
 import com.social.media.blog.ltd.model.dto.CategoryModelDTO
+import com.social.media.blog.ltd.model.dto.PostModelDTO
 import com.social.media.blog.ltd.ui.adapter.rcv.CategoryAdapter
+import com.social.media.blog.ltd.ui.adapter.rcv.PostAdapterTypeOne
 import com.social.media.blog.ltd.ui.base.BaseFragment
 import com.social.media.blog.ltd.ui.screen.home.frg.vm.HomeViewModel
 
@@ -17,11 +20,13 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private val viewModel: HomeViewModel by viewModels()
 
     private lateinit var categoryAdapter: CategoryAdapter
+    private lateinit var postAdapterOne: PostAdapterTypeOne
 
     override fun getLayoutFragment(): Int = R.layout.fragment_home
 
     override fun initVariables() {
         initCategoryAdapter()
+        initPostAdapterOne()
     }
 
     override fun initViews() {
@@ -32,12 +37,20 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 clipToPadding = false
                 setItemViewCacheSize(20)
             }
+
+            rcv2.apply {
+                adapter = postAdapterOne
+                setHasFixedSize(true)
+                clipToPadding = false
+                setItemViewCacheSize(20)
+            }
         }
     }
 
     override fun fetchDataSrc() {
         viewModel.apply {
             fetchCategories()
+            fetchPosts()
         }
     }
 
@@ -50,6 +63,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             categories.observe(viewLifecycleOwner) { listCategories ->
                 setNewDataCategory(listCategories)
                 cacheCategoryPostIfCan(listCategories[0], 0)
+            }
+
+            isLoadingPostOne.observe(viewLifecycleOwner) { isLoading ->
+                if (isLoading) mBinding.loadingPost1.visibleView()
+                else mBinding.loadingPost1.goneView()
+            }
+
+            posts.observe(viewLifecycleOwner) { listPosts ->
+                setNewDataPost(listPosts)
             }
         }
     }
@@ -85,4 +107,11 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         SharedUtils.jsonCategory = jsonCategory
         SharedUtils.indexCategory = indexCache
     }
+
+    private fun initPostAdapterOne() {
+        postAdapterOne = PostAdapterTypeOne()
+    }
+
+    private fun setNewDataPost(newData: MutableList<PostModelDTO>) =
+        postAdapterOne.submitData(newData)
 }
