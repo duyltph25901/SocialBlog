@@ -40,4 +40,24 @@ object SharedUtils {
     var jsonUserCache: String
         get() = getValue("json_user_cache", "{}")
         set(value) = setValue("json_user_cache", value)
+
+    /**
+     *      If true -> post is public mode
+     *      else false -> post is private
+     * **/
+    var modePost: Boolean
+        get() = getValue("mode_post", true)
+        set(value) = setValue("mode_post", value)
+
+
+    var indexCategory: Int
+        get() = getValue("index_category_post", 0)
+        set(value) = setValue("index_category_post", value)
+
+    /**
+     *      category post will be saved by json
+     * **/
+    var jsonCategory: String
+        get() = getValue("json_category_post", "{}")
+        set(value) = setValue("json_category_post", value)
 }
