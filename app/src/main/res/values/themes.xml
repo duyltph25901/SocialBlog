@@ -1,10 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.BaseProjectFlamingo" parent="Theme.Material3.DayNight.NoActionBar" />
+    <style name="Base.Theme.BlogSocial" parent="Theme.Material3.DayNight.NoActionBar" />
 
     <style name="AdsAppTheme" parent="Theme.AppCompat.Light"/>
 
-    <style name="Theme.BaseProjectFlamingo" parent="Base.Theme.BaseProjectFlamingo" />
+    <style name="Theme.BlogSocial" parent="Base.Theme.BlogSocial" />
 
     <style name="AppTheme.Ads" parent="@style/AdsAppTheme">
         <item name="android:textSize">11.0sp</item>

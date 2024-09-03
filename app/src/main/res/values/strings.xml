@@ -26,7 +26,7 @@
     <string name="account_registration_successful">Account registration successful!</string>
     <string name="no_network_connection">No network connection!</string>
     <string name="account_not_found">Account Not Found!</string>
-    <string name="add_a_comment">Add a comment...</string>
+    <string name="add_a_comment">Add a comment…</string>
     <string name="recent_news">Recent news</string>
     <string name="create_new_post">Create New Post</string>
     <string name="private_text">Private</string>
@@ -34,4 +34,13 @@
     <string name="publish">Publish</string>
     <string name="what_are_you_thinking">What are you thinking?</string>
     <string name="public_text">Public</string>
+    <string name="change_new_mode">Change New Mode</string>
+    <string name="change_category_post">Change Category Post</string>
+    <string name="please_allow_us_to_access_your_camera_and_take_picture">Please allow us to access your camera and take picture.</string>
+    <string name="choose_image">Choose Image</string>
+    <string name="message_denied_camera_permission">You need to grant camera permission to use this feature!</string>
+    <string name="take_photo_again">Something went wrong, take photo again!</string>
+    <string name="crop_image">Crop Image</string>
+    <string name="upload_post_fail">Somethings went wrong! Please upload again!</string>
+    <string name="upload_post_success">Posted, please check your profile!</string>
 </resources>
