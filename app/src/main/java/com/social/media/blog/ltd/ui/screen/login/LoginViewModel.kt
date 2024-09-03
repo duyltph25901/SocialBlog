@@ -14,67 +14,67 @@ import com.social.media.blog.ltd.commons.extention.toastMessageRes
 import com.social.media.blog.ltd.model.dto.UserModelDTO
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlin.coroutines.resume
-import kotlin.coroutines.suspendCoroutine
 
 class LoginViewModel : ViewModel() {
 
     private val _users = MutableLiveData<MutableList<UserModelDTO>>()
     private val _isLoadingFetchUsers = MutableLiveData<Boolean>()
-    private val _userDtoAfterSearch = MutableLiveData<UserModelDTO?>()
+
+    private val eventListener: ValueEventListener
+
+    init {
+        showLoading()
+        eventListener = createUserEventListener()
+    }
 
     val users: LiveData<MutableList<UserModelDTO>> = _users
     val isLoadingFetchUsers: LiveData<Boolean> = _isLoadingFetchUsers
-    val userDtoAfterSearch: LiveData<UserModelDTO?> = _userDtoAfterSearch
 
     fun toastMessageInComing(context: Context) =
         context.toastMessageRes(R.string.this_feature_will_be_released_soon)
 
     fun fetchDataUser() = viewModelScope.launch(Dispatchers.IO) {
-        _isLoadingFetchUsers.postValue(true)
-        val resultListUser = fetchDataUserReturnResult()
-        _users.postValue(resultListUser)
-        _isLoadingFetchUsers.postValue(false)
+        userRef.addValueEventListener(eventListener)
     }
 
     fun searchEmailAndPassword(email: String, password: String, list: MutableList<UserModelDTO>) =
-        viewModelScope.launch(Dispatchers.IO) {
-            _isLoadingFetchUsers.postValue(true)
-            val resultAfterSearch = searchEmailAndPasswordReturnResult(email, password, list)
-            _userDtoAfterSearch.postValue(resultAfterSearch)
-            _isLoadingFetchUsers.postValue(false)
+        list.firstOrNull { user ->
+            user.email == email && user.password == password
         }
 
+    private fun createUserEventListener(): ValueEventListener =
+        object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val listUsersModelDto = getListUserFromSnapShot(dataSnapshot)
+                postListUserData(listUsersModelDto)
+                hideLoading()
+            }
 
-    private suspend fun searchEmailAndPasswordReturnResult(
-        email: String,
-        password: String,
-        list: MutableList<UserModelDTO>
-    ): UserModelDTO? = suspendCoroutine { continuation ->
-        continuation.resume(list.firstOrNull { user ->
-            user.email == email && user.password == password
-        })
+            override fun onCancelled(error: DatabaseError) {
+                postListUsersEmpty()
+                hideLoading()
+            }
+        }
+
+    private fun postListUsersEmpty() = _users.postValue(mutableListOf())
+
+    private fun postListUserData(data: MutableList<UserModelDTO>) = _users.postValue(data)
+
+    private fun getListUserFromSnapShot(dataSnapshot: DataSnapshot): MutableList<UserModelDTO> {
+        val listUsersModelDto = mutableListOf<UserModelDTO>()
+        for (userSnapShot in dataSnapshot.children) {
+            val userModelDto = userSnapShot.getValue(UserModelDTO::class.java)
+            if (userModelDto != null) {
+                listUsersModelDto.add(userModelDto)
+            }
+        }
+
+        return listUsersModelDto
     }
 
-    private suspend fun fetchDataUserReturnResult(): MutableList<UserModelDTO> =
-        suspendCoroutine { continuation ->
-            val listener = object : ValueEventListener {
-                override fun onDataChange(dataSnapShot: DataSnapshot) {
-                    val listUsersModelDto = mutableListOf<UserModelDTO>()
-                    for (userSnapShot in dataSnapShot.children) {
-                        val userModelDto = userSnapShot.getValue(UserModelDTO::class.java)
-                        if (userModelDto != null) {
-                            listUsersModelDto.add(userModelDto)
-                        }
-                    }
+    fun stopListeningUserData() = userRef.removeEventListener(eventListener)
 
-                    continuation.resume(listUsersModelDto)
-                }
+    private fun showLoading() = _isLoadingFetchUsers.postValue(true)
 
-                override fun onCancelled(error: DatabaseError) {
-                    continuation.resume(mutableListOf())
-                }
-            }
-            userRef.addValueEventListener(listener)
-        }
+    private fun hideLoading() = _isLoadingFetchUsers.postValue(false)
 }
