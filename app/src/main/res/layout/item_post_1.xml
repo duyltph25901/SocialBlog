@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_4sdp"
+        android:layout_marginBottom="@dimen/_12sdp"
+        app:cardCornerRadius="@dimen/_12sdp"
+        app:cardElevation="@dimen/_4sdp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/_8sdp">
+
+            <ImageView
+                android:id="@+id/imageViewPost"
+                android:layout_width="match_parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_height="@dimen/_120sdp"
+                android:scaleType="centerCrop"/>
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_12sdp"
+                android:fontFamily="@font/font_semi_bold"
+                android:maxLines="2"
+                android:text="NASA discovered a new planet tha can save world bla bla bla bla ..."
+                android:textColor="@color/text_dark"
+                android:textSize="@dimen/_14ssp"
+                app:layout_constraintTop_toBottomOf="@id/imageViewPost" />
+
+            <TextView
+                android:id="@+id/textContent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/_8sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/font_regular"
+                android:maxLines="2"
+                android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam imperdiet viverra erat malesuada dapibus"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintTop_toBottomOf="@id/textTitle" />
+
+            <ImageView
+                android:id="@+id/icFavorite"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:src="@drawable/ic_favorite_selected"
+                app:layout_constraintStart_toStartOf="@id/textContent"
+                app:layout_constraintTop_toBottomOf="@id/textContent" />
+
+            <ImageView
+                android:id="@+id/icComment"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:src="@drawable/ic_comment"
+                app:layout_constraintBottom_toBottomOf="@id/icFavorite"
+                app:layout_constraintStart_toEndOf="@id/icFavorite"
+                app:layout_constraintTop_toTopOf="@id/icFavorite" />
+
+            <ImageView
+                android:id="@+id/icShare"
+                android:layout_width="@dimen/_24sdp"
+                android:layout_height="@dimen/_24sdp"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:src="@drawable/ic_share"
+                app:layout_constraintBottom_toBottomOf="@id/icComment"
+                app:layout_constraintStart_toEndOf="@id/icComment"
+                app:layout_constraintTop_toTopOf="@id/icComment" />
+
+            <TextView
+                android:id="@+id/textViewAllComments"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:fontFamily="@font/font_medium"
+                android:text="View all 12 comments"
+                android:textColor="#FF1B2251"
+                android:textSize="@dimen/_10ssp"
+                app:layout_constraintStart_toStartOf="@id/icFavorite"
+                app:layout_constraintTop_toBottomOf="@id/icFavorite" />
+
+            <View
+                android:id="@+id/viewSupported"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:background="#33959595"
+                app:layout_constraintTop_toBottomOf="@id/textViewAllComments" />
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:layout_marginTop="@dimen/_8sdp"
+                android:padding="@dimen/_2sdp"
+                android:src="@drawable/ic_emoji"
+                app:layout_constraintStart_toStartOf="@id/textViewAllComments"
+                app:layout_constraintTop_toBottomOf="@id/viewSupported"
+                app:layout_goneMarginTop="@dimen/_12sdp" />
+
+            <TextView
+                android:id="@+id/textAddAComment"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_8sdp"
+                android:fontFamily="@font/font_regular"
+                android:text="@string/add_a_comment"
+                android:textSize="@dimen/_12ssp"
+                app:layout_constraintBottom_toBottomOf="@id/icon"
+                app:layout_constraintStart_toEndOf="@id/icon"
+                app:layout_constraintTop_toTopOf="@id/icon" />
+
+            <TextView
+                android:id="@+id/textSend"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/_8sdp"
+                android:fontFamily="@font/font_semi_bold"
+                android:text="Send"
+                android:textColor="#FF1B2251"
+                app:layout_constraintBottom_toBottomOf="@id/textAddAComment"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/textAddAComment" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>
