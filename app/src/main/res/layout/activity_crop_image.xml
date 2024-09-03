@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/topTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#001262"
+            android:fontFamily="@font/font_semi_bold"
+            android:gravity="center"
+            android:paddingVertical="@dimen/_12sdp"
+            android:text="@string/crop_image"
+            android:textAlignment="center"
+            android:textColor="#FF8600"
+            android:textSize="@dimen/_24ssp"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/icBack"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginStart="@dimen/_16sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_back"
+            app:layout_constraintBottom_toBottomOf="@id/topTitle"
+            app:layout_constraintStart_toStartOf="@id/topTitle"
+            app:layout_constraintTop_toTopOf="@id/topTitle"
+            app:tint="@color/white" />
+
+        <ImageView
+            android:id="@+id/icDone"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_16sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/ic_tick"
+            app:layout_constraintBottom_toBottomOf="@id/icBack"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/icBack" />
+
+        <FrameLayout
+            android:id="@+id/fr_banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+            <include layout="@layout/layout_banner_control" />
+        </FrameLayout>
+
+        <View
+            android:id="@+id/viewSupported"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#33959595"
+            app:layout_constraintBottom_toTopOf="@id/fr_banner" />
+
+        <com.canhub.cropper.CropImageView
+            android:id="@+id/cropImageView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="@dimen/_16sdp"
+            app:layout_constraintBottom_toTopOf="@id/viewSupported"
+            app:layout_constraintTop_toBottomOf="@id/topTitle" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
