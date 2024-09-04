@@ -1,6 +1,7 @@
 package com.social.media.blog.ltd.model.dto
 
 import java.util.UUID
+import java.io.Serializable
 
 data class PostModelDTO(
     var id: String = UUID.randomUUID().toString(),
@@ -17,12 +18,12 @@ data class PostModelDTO(
     var listIdUserLiked: MutableList<String> = mutableListOf(),
     var listComments: MutableList<Comment> = mutableListOf()
 
-) {
+): Serializable {
 
     data class Comment(
         var idUser: String = "",
         var comment: String = "",
         var commentedAt: Long = System.currentTimeMillis()
-    )
+    ): Serializable
 
 }
