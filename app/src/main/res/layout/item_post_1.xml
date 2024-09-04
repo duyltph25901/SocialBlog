@@ -26,9 +26,9 @@
                 <ImageView
                     android:id="@+id/imageViewPost"
                     android:layout_width="match_parent"
-                    app:layout_constraintTop_toTopOf="parent"
                     android:layout_height="@dimen/_120sdp"
-                    android:scaleType="centerCrop" />
+                    android:scaleType="centerCrop"
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
                     android:id="@+id/textTitle"
@@ -116,15 +116,23 @@
                     app:layout_constraintTop_toBottomOf="@id/viewSupported"
                     app:layout_goneMarginTop="@dimen/_12sdp" />
 
-                <TextView
-                    android:id="@+id/textAddAComment"
-                    android:layout_width="wrap_content"
+                <EditText
+                    android:id="@+id/inputAddComment"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/_8sdp"
+                    android:layout_marginHorizontal="@dimen/_12sdp"
+                    android:autofillHints="name"
+                    android:background="@null"
                     android:fontFamily="@font/font_regular"
-                    android:text="@string/add_a_comment"
+                    android:hint="@string/add_a_comment"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:lines="1"
+                    android:textColor="@color/text_dark"
+                    android:textColorHint="@color/text_gray"
                     android:textSize="@dimen/_12ssp"
                     app:layout_constraintBottom_toBottomOf="@id/icon"
+                    app:layout_constraintEnd_toStartOf="@id/textSend"
                     app:layout_constraintStart_toEndOf="@id/icon"
                     app:layout_constraintTop_toTopOf="@id/icon" />
 
@@ -134,11 +142,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="@dimen/_8sdp"
                     android:fontFamily="@font/font_semi_bold"
-                    android:text="Send"
+                    android:text="@string/send"
                     android:textColor="#FF1B2251"
-                    app:layout_constraintBottom_toBottomOf="@id/textAddAComment"
+                    app:layout_constraintBottom_toBottomOf="@id/inputAddComment"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/textAddAComment" />
+                    app:layout_constraintTop_toTopOf="@id/inputAddComment" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

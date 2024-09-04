@@ -44,4 +44,6 @@
     <string name="upload_post_fail">Somethings went wrong! Please upload again!</string>
     <string name="upload_post_success">Posted, please check your profile!</string>
     <string name="view_all_comments">View all %d comments</string>
+    <string name="send">Send</string>
+    <string name="some_thing_went_wrong">Some thing went wrong</string>
 </resources>
