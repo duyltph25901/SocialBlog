@@ -1,5 +1,7 @@
 package com.social.media.blog.ltd.ui.adapter.rcv
 
+import android.annotation.SuppressLint
+import android.widget.EditText
 import androidx.databinding.ViewDataBinding
 import com.bumptech.glide.Glide
 import com.social.media.blog.ltd.R
@@ -11,7 +13,13 @@ import com.social.media.blog.ltd.model.dto.PostModelDTO
 import com.social.media.blog.ltd.model.dto.UserModelDTO
 import com.social.media.blog.ltd.ui.base.BaseRecyclerView
 
-class PostAdapterTypeOne: BaseRecyclerView<PostModelDTO>() {
+class PostAdapterTypeOne(
+    private val likedPost: (post: PostModelDTO, index: Int) -> Unit,
+    private val commentPost: (post: PostModelDTO, index: Int, comment: String) -> Unit,
+    private val sharePost: (post: PostModelDTO, index: Int) -> Unit,
+    private val showDetailsPost: (post: PostModelDTO, index: Int) -> Unit
+
+): BaseRecyclerView<PostModelDTO>() {
     override fun getItemLayout(): Int = R.layout.item_post_1
 
     override fun setData(binding: ViewDataBinding, item: PostModelDTO, layoutPosition: Int) {
@@ -26,6 +34,7 @@ class PostAdapterTypeOne: BaseRecyclerView<PostModelDTO>() {
         }
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     override fun submitData(newData: List<PostModelDTO>) {
         list.apply {
             clear()
@@ -37,24 +46,21 @@ class PostAdapterTypeOne: BaseRecyclerView<PostModelDTO>() {
     override fun onClickViews(binding: ViewDataBinding, obj: PostModelDTO, layoutPosition: Int) {
         if (binding is ItemPost1Binding) {
             binding.root.click {
-
+                showDetailsPost.invoke(obj, layoutPosition)
             }
 
             binding.icFavorite.click {
-
+                likedPost.invoke(obj, layoutPosition)
             }
 
-            binding.icComment.click {
-
+            binding.textSend.click {
+                val textInputComment = getTextInputComment(binding)
+                commentPost.invoke(obj, layoutPosition, textInputComment)
             }
 
-            binding.icShare.click {  }
-
-            binding.icon.click {  }
-
-            binding.textAddAComment.click {  }
-
-            binding.textSend.click {  }
+            binding.icShare.click {
+                sharePost.invoke(obj, layoutPosition)
+            }
         }
     }
 
@@ -73,4 +79,7 @@ class PostAdapterTypeOne: BaseRecyclerView<PostModelDTO>() {
 
     private fun convertJsonToUserModelDto(json: String, binding: ItemPost1Binding) =
         getContext(binding).convertJsonToObject(json, UserModelDTO::class.java)
+
+    private fun getTextInputComment(binding: ItemPost1Binding) =
+        binding.inputAddComment.text.toString().trim()
 }
