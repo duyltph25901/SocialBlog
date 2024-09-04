@@ -2,6 +2,8 @@ package com.social.media.blog.ltd.commons.extention
 
 import android.content.Context
 import android.os.Build
+import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
@@ -65,3 +67,8 @@ fun Context.isCameraPermissionAccepted() = PermissionUtils.isCameraPermissionAcc
 
 fun Context.requestCameraPermission(fragment: Fragment, callback: () -> Unit) =
     PermissionUtils.requestCameraPermission(fragment, callback)
+
+fun Context.hideKeyboard(view: View) {
+    val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
+    inputMethodManager.hideSoftInputFromWindow(view.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
+}
