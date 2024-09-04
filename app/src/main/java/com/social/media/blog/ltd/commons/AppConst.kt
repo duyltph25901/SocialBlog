@@ -11,6 +11,7 @@ object AppConst {
     internal const val KEY_PATH_IMAGE_TO_CROP = "KEY_PATH_IMAGE_TO_CROP"
     internal const val KEY_IMAGE_URI_TO_CROP = "KEY_IMAGE_URI_TO_CROP"
     internal const val KEY_IMAGE_PATH_AFTER_CROP = "KEY_IMAGE_PATH_AFTER_CROP"
+    internal const val KEY_SHOW_POST_DETAIL = "KEY_SHOW_POST_DETAIL"
 
     // NUMBER
     internal const val SPLASH_DELAY_TIME_MS_TYPE = 4000L
