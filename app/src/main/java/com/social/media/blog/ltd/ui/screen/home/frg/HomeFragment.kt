@@ -130,10 +130,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             val indexBefore = categoryAdapter.itemSelected
             categoryAdapter.itemSelected = index
             if (indexBefore != -1) categoryAdapter.notifyItemChanged(indexBefore)
+
+            handleFilterRecentlyPost(category)
         }, unSelectedCategory = { category, index ->
             val indexBefore = categoryAdapter.itemSelected
             categoryAdapter.itemSelected = -1
             categoryAdapter.notifyItemChanged(indexBefore)
+
+            clearFilterModeRecentlyPost()
         })
     }
 
@@ -291,4 +295,26 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private fun startPostDetailActivity(bundle: Bundle) =
         Routes.startPostDetailActivity(requireActivity(), bundle)
+
+    private fun getValuePostRecentlyPost() =
+        viewModel.postRecentlyNews.value ?: mutableListOf()
+
+    private fun filterListPostRecentlyByCategory(
+        category: CategoryModelDTO,
+        listRecentPost: MutableList<PostModelDTO>
+    ) =
+        listRecentPost.filter { it.category.id == category.id }.sortedByDescending { it.createdAt }
+            .toMutableList()
+
+    private fun handleFilterRecentlyPost(category: CategoryModelDTO) {
+        val listRecentPost = getValuePostRecentlyPost()
+        val filterRecentPost =
+            filterListPostRecentlyByCategory(category, listRecentPost)
+        setNewDataPost2(filterRecentPost)
+    }
+
+    private fun clearFilterModeRecentlyPost() {
+        val listRecentPost = getValuePostRecentlyPost()
+        setNewDataPost2(listRecentPost)
+    }
 }
