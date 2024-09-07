@@ -10,6 +10,7 @@ import androidx.fragment.app.Fragment
 import com.social.media.blog.ltd.commons.ConvertUtils.convertJsonToObjectConvertUtils
 import com.social.media.blog.ltd.commons.ConvertUtils.convertObjectToJsonConvertUtils
 import com.social.media.blog.ltd.commons.PermissionUtils
+import java.text.SimpleDateFormat
 import java.util.Locale
 import java.util.regex.Pattern
 
@@ -72,3 +73,9 @@ fun Context.hideKeyboard(view: View) {
     val inputMethodManager = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
     inputMethodManager.hideSoftInputFromWindow(view.windowToken, InputMethodManager.HIDE_NOT_ALWAYS)
 }
+
+fun Context.formatCurrentTimeTo_hh_mm_dd_MM_yyyy(current: Long) =
+    SimpleDateFormat("HH:mm dd/MM/yyyy", Locale("vi", "VN")).format(current)
+
+fun Context.formatCurrentTimeTo_dd_MM_yyyy(current: Long) =
+    SimpleDateFormat("dd/MM/yyyy", Locale("vi", "VN")).format(current)

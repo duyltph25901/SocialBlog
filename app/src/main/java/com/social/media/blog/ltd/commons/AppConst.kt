@@ -15,6 +15,8 @@ object AppConst {
 
     // NUMBER
     internal const val SPLASH_DELAY_TIME_MS_TYPE = 4000L
+    internal const val FLAG_REQUEST_API_TRUE = 1
+    internal const val FLAG_REQUEST_API_FAIL = 0
 
     // FIREBASE VARIABLES
     private val database = FirebaseDatabase.getInstance()

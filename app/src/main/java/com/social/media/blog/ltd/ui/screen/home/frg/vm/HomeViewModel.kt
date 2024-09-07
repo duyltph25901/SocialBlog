@@ -8,6 +8,8 @@ import androidx.lifecycle.viewModelScope
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
+import com.social.media.blog.ltd.commons.AppConst.FLAG_REQUEST_API_FAIL
+import com.social.media.blog.ltd.commons.AppConst.FLAG_REQUEST_API_TRUE
 import com.social.media.blog.ltd.commons.AppConst.categoryRef
 import com.social.media.blog.ltd.commons.AppConst.postRef
 import com.social.media.blog.ltd.commons.SharedUtils
@@ -22,11 +24,6 @@ import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
 
 class HomeViewModel : ViewModel() {
-
-    companion object {
-        internal const val FLAG_REQUEST_API_TRUE = 1
-        internal const val FLAG_REQUEST_API_FAIL = 0
-    }
 
     private val _isLoadingCategory = MutableLiveData<Boolean>()
     private val _isLoadingPostOne = MutableLiveData<Boolean>()

@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import com.social.media.blog.ltd.R
+import com.social.media.blog.ltd.commons.AppConst.FLAG_REQUEST_API_TRUE
 import com.social.media.blog.ltd.commons.AppConst.KEY_SHOW_POST_DETAIL
 import com.social.media.blog.ltd.commons.Routes
 import com.social.media.blog.ltd.commons.SharedUtils
@@ -20,7 +21,6 @@ import com.social.media.blog.ltd.ui.adapter.rcv.PostAdapterTypeOne
 import com.social.media.blog.ltd.ui.base.BaseFragment
 import com.social.media.blog.ltd.ui.dialog.LoadingResponseDialog
 import com.social.media.blog.ltd.ui.screen.home.frg.vm.HomeViewModel
-import com.social.media.blog.ltd.ui.screen.home.frg.vm.HomeViewModel.Companion.FLAG_REQUEST_API_TRUE
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
