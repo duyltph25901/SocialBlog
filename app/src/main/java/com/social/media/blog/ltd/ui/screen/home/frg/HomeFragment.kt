@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.social.media.blog.ltd.R
 import com.social.media.blog.ltd.commons.AppConst.FLAG_REQUEST_API_TRUE
+import com.social.media.blog.ltd.commons.AppConst.KEY_CATEGORY_FILTER
 import com.social.media.blog.ltd.commons.AppConst.KEY_SHOW_POST_DETAIL
 import com.social.media.blog.ltd.commons.Routes
 import com.social.media.blog.ltd.commons.Routes.startAllPostActivity
@@ -40,6 +41,8 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private lateinit var postAdapterOne: PostAdapterTypeOne
     private lateinit var postAdapterTwo: PostAdapterTypeTwo
     private lateinit var loadingDialog: LoadingResponseDialog
+
+    private var categoryFilter: CategoryModelDTO? = null
 
     override fun getLayoutFragment(): Int = R.layout.fragment_home
 
@@ -112,8 +115,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun onClickViews() {
         mBinding.apply {
-            textSeeAll.click { startAllPostActivity(requireActivity()) }
+            textSeeAll.click { startAllPostActivity(requireActivity(), getBundleAllPostActivity()) }
         }
+    }
+
+    private fun getBundleAllPostActivity() = Bundle().apply {
+        putSerializable(KEY_CATEGORY_FILTER, categoryFilter)
     }
 
     override fun onDestroy() {
@@ -132,12 +139,14 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             if (indexBefore != -1) categoryAdapter.notifyItemChanged(indexBefore)
 
             handleFilterRecentlyPost(category)
-        }, unSelectedCategory = { category, index ->
+            setValueForCategoryFlag(category)
+        }, unSelectedCategory = { _, index ->
             val indexBefore = categoryAdapter.itemSelected
             categoryAdapter.itemSelected = -1
             categoryAdapter.notifyItemChanged(indexBefore)
 
             clearFilterModeRecentlyPost()
+            setValueForCategoryFlag(null)
         })
     }
 
@@ -316,5 +325,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     private fun clearFilterModeRecentlyPost() {
         val listRecentPost = getValuePostRecentlyPost()
         setNewDataPost2(listRecentPost)
+    }
+
+    private fun setValueForCategoryFlag(category: CategoryModelDTO?) {
+        categoryFilter = category
     }
 }

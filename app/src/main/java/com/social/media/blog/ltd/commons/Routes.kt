@@ -38,8 +38,9 @@ object Routes {
             fromActivity.startActivity(this)
         }
 
-    fun startAllPostActivity(fromActivity: Activity) =
+    fun startAllPostActivity(fromActivity: Activity, bundle: Bundle) =
         Intent(fromActivity, AllPostActivity::class.java).apply {
+            putExtras(bundle)
             fromActivity.startActivity(this)
         }
 

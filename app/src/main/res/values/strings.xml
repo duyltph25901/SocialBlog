@@ -54,4 +54,5 @@
     <string name="likes">likes</string>
     <string name="like">%d Like</string>
     <string name="read_more">Read more</string>
+    <string name="search_news_by_title">Search news by title...</string>
 </resources>
