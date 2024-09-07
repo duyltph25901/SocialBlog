@@ -1,4 +1,4 @@
-package com.social.media.blog.ltd.ui.screen.post
+package com.social.media.blog.ltd.ui.screen.post.detail
 
 import android.text.Editable
 import android.text.TextWatcher
@@ -16,6 +16,7 @@ import com.social.media.blog.ltd.model.dto.PostModelDTO
 import com.social.media.blog.ltd.ui.adapter.rcv.CommentAdapter
 import com.social.media.blog.ltd.ui.base.BaseActivity
 import com.social.media.blog.ltd.ui.dialog.LoadingResponseDialog
+import kotlinx.coroutines.Deferred
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.cancel
 import kotlinx.coroutines.launch
@@ -38,7 +39,7 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding>() {
     }
 
     override fun initView() {
-        getValuePostModelDtoAndDomain()
+        getValuePostModelDomain()
     }
 
     override fun observerDataSource() = viewModel.apply {
@@ -79,7 +80,8 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding>() {
             if (isViewsHigherThanOne(post)) "${getViewsOfPost(post)} ${getTextViewsRes()}" else getTextTextOneViewRes()
         icFavorite.isActivated =
             post.post.listIdUserLiked.find { it == getIdUserCurrent() } != null
-
+        textLikes.text =
+            if (isLikesHigherThanOne(post)) "${getLikesOfPost(post)} ${getTextLikesRes()}" else getTextLike(post.post.listIdUserLiked.size)
         submitListCommentAdapter(post.listComment)
     }
 
@@ -94,8 +96,8 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding>() {
         setItemViewCacheSize(20)
     }
 
-    private fun getValuePostModelDtoAndDomain() =
-        viewModel.getValuePostModelDtoAndDomain(intent = intent)
+    private fun getValuePostModelDomain() =
+        viewModel.getValuePostModelDomain(intent = intent)
 
     private fun submitListCommentAdapter(list: MutableList<PostModelDomain.CommentModelDomain>) =
         commentAdapter.submitData(list)
@@ -105,32 +107,39 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding>() {
 
     private fun getJsonUserCurrent() = viewModel.getJsonUserCurrent()
 
-    private fun getIdUserCurrent(): String {
-        val json = getJsonUserCurrent()
-        val userCurrent = convertJsonToUserModelDto(json)
+    private fun getIdUserCurrent(): String = getUserCurrent().idUser
 
-        return userCurrent.idUser
-    }
+    private fun getUserCurrent() =
+        convertJsonToUserModelDto(getJsonUserCurrent())
 
     private fun getTextViewsRes() = getString(R.string.views)
 
     private fun getTextTextOneViewRes() = getString(R.string.one_view)
 
+    private fun getTextLikesRes() = getString(R.string.likes)
+
+    private fun getTextLike(like: Int) = getString(R.string.like, like)
+
     private fun isViewsHigherThanOne(post: PostModelDomain) =
         post.post.views > 1
 
+    private fun isLikesHigherThanOne(post: PostModelDomain) =
+        post.post.listIdUserLiked.size > 1
+
     private fun getViewsOfPost(post: PostModelDomain) = post.post.views
+
+    private fun getLikesOfPost(post: PostModelDomain) = post.post.listIdUserLiked.size
 
     private fun likeOrUnLike(idUser: String) =
         lifecycleScope.launch(Dispatchers.IO) {
-            val postModelDto = getPostModelDto()
+            postValueShowLoadingVm()
+            val postModelDto = getPostModelDtoFromPostModelDomain()
             val isIdUserAlreadyExist = isIdUserAlreadyExist(postModelDto.listIdUserLiked, idUser)
             if (isIdUserAlreadyExist) postModelDto.listIdUserLiked.remove(idUser)
             else postModelDto.listIdUserLiked.add(idUser)
-            postValueShowLoadingVm()
             val responseAfterUpdateDb = updateDatabaseReturnResponse(postModelDto)
             when (responseAfterUpdateDb) {
-                FLAG_REQUEST_API_TRUE -> onResponseLikeSuccess(idUser, isIdUserAlreadyExist)
+                FLAG_REQUEST_API_TRUE -> onResponseLikeOrUnLikeSuccess(postModelDto) //refreshPostModelDomain(postModelDomain)
 
                 else -> showMessageWrong()
             }
@@ -138,10 +147,34 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding>() {
             cancel()
         }
 
+    private fun getListIdUserLikedFromPostModelDomain() =
+        postModelDomain.post.listIdUserLiked
+
+    private suspend fun onResponseLikeOrUnLikeSuccess(postModelDto: PostModelDTO) {
+        refreshPostModelDomainLikeOrUnLike(postModelDto)
+        val listIdUserLiked =
+            getListIdUserLikedFromPostModelDomain()
+        changeStateIconFavorite(listIdUserLiked)
+        withContext(Dispatchers.Main) { changeTextLikes(listIdUserLiked) }
+    }
+
+    private fun refreshPostModelDomainLikeOrUnLike(postModelDto: PostModelDTO) =
+        viewModel.refreshPostModelDomainLikeOrUnLike(postModelDto)
+
+    private fun changeStateIconFavorite(listId: MutableList<String>) {
+        val isUserLiked = listId.find { it == getIdUserCurrent() } != null
+        binding.icFavorite.isActivated = isUserLiked
+    }
+
+    private fun changeTextLikes(list: MutableList<String>) {
+        binding.textLikes.text =
+            if (list.size > 1) "${list.size} ${getTextLikesRes()}" else getTextLike(list.size)
+    }
+
     private fun showMessageWrong() =
         toastMessageRes(R.string.some_thing_went_wrong)
 
-    private fun getPostModelDto() = postModelDomain.post
+    private fun getPostModelDtoFromPostModelDomain() = postModelDomain.post
 
     private suspend fun updateDatabaseReturnResponse(post: PostModelDTO) =
         viewModel.updateDatabaseReturnResponse(post)
@@ -149,23 +182,6 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding>() {
     private fun postValueShowLoadingVm() = viewModel.showLoading()
 
     private fun postValueHideLoadingVm() = viewModel.hideLoading()
-
-    private fun onResponseLikeSuccess(id: String, isUnLike: Boolean) {
-        val postRefresh = addOrRemoveIdToListLiked(id, isUnLike)
-        refreshPostModelDomain(postRefresh)
-    }
-
-    private fun refreshPostModelDomain(post: PostModelDomain) =
-        viewModel.refreshPostModelDomain(post)
-
-    private fun addOrRemoveIdToListLiked(id: String, isUnLike: Boolean): PostModelDomain {
-        val postTemp = postModelDomain
-        postTemp.post.listIdUserLiked.apply {
-            if (isUnLike) remove(id)
-            else add(id)
-        }
-        return postTemp
-    }
 
     private fun isIdUserAlreadyExist(list: MutableList<String>, id: String) =
         list.find { it == id } != null
@@ -190,27 +206,67 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding>() {
         }
 
     private fun eventSendComment() {
-        val comment = binding.inputComment.text.toString()
-        if (comment.isEmpty()) return
-        lifecycleScope.launch {
-            val defUpdate =
-                viewModel.handleAddComment(getPostModelDto(), comment, this@PostDetailActivity)
-            val flagAfterUpdate = defUpdate.await()
-            defUpdate.cancel()
+        val comment = getCommentFromInput()
+        if (isCommentNotNull(comment)) handleSendComment(comment)
+    }
 
+    private fun getCommentFromInput() = binding.inputComment.text.toString()
+
+    private fun isCommentNotNull(comment: String) = comment.isNotEmpty()
+
+    private fun handleSendComment(comment: String) =
+        lifecycleScope.launch {
+            val defUpdate = getDeferredComment(comment)
+            val flagAfterUpdate = getValueFromDeferred(defUpdate)
+            cancelDeferred(defUpdate)
             when (flagAfterUpdate) {
-                FLAG_REQUEST_API_TRUE -> onResponseCommentSuccess()
+                FLAG_REQUEST_API_TRUE -> {
+                    val commentModelDto = getCommentModelDtoAfterComment()
+                    val commentModelDomain = getCommentModelDomainAfterComment(commentModelDto)
+                    onResponseCommentSuccess(commentModelDomain)
+                }
 
                 else -> showMessageWrong()
             }
 
             cancel()
         }
+
+    private suspend fun getValueFromDeferred(def: Deferred<Int>) = def.await()
+
+    private fun cancelDeferred(def: Deferred<Int>) = def.cancel()
+
+    private fun getCommentModelDtoAfterComment() =
+        getListCommentFromPostModelDomain()[getLastIndexListComment()]
+
+    private fun getListCommentFromPostModelDomain() =
+        postModelDomain.post.listComments
+
+    private fun getLastIndexListComment() = getListCommentFromPostModelDomain().size - 1
+
+    private fun getDeferredComment(comment: String) =
+        viewModel.handleAddComment(getPostModelDtoFromPostModelDomain(), comment, this@PostDetailActivity)
+
+    private fun getCommentModelDomainAfterComment(comment: PostModelDTO.Comment) =
+        PostModelDomain.CommentModelDomain(
+            comment = comment,
+            userName = getUserCurrent().userName,
+            avatarUser = getUserCurrent().avatar
+        )
+
+    private fun onResponseCommentSuccess(comment: PostModelDomain.CommentModelDomain) {
+        refreshPostModelDomainComment(comment)
+        clearInputComment()
+        showCommentAfterPush(comment)
     }
 
-    private fun onResponseCommentSuccess() =
-        lifecycleScope.launch(Dispatchers.IO) {
-            viewModel.refreshPostModelDomainAfterComment(postModelDomain)
-            withContext(Dispatchers.Main) { binding.inputComment.text.clear() }
-        }
+    private fun refreshPostModelDomainComment(comment: PostModelDomain.CommentModelDomain) =
+        viewModel.refreshPostModelDomainComment(comment)
+
+    private fun clearInputComment() =
+        binding.inputComment.text.clear()
+
+    private fun showCommentAfterPush(comment: PostModelDomain.CommentModelDomain) =
+        commentAdapter.addToFirstListComment(comment)
+
 }

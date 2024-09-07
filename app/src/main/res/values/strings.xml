@@ -51,4 +51,7 @@
     <string name="comments">Comments</string>
     <string name="views">views</string>
     <string name="one_view">1 view</string>
+    <string name="likes">likes</string>
+    <string name="like">%d Like</string>
+    <string name="read_more">Read more</string>
 </resources>

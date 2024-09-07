@@ -32,12 +32,25 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/icBack" />
 
+        <TextView
+            android:id="@+id/textLikes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_2sdp"
+            android:fontFamily="@font/font_regular"
+            tools:text="12 Likes"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/_8ssp"
+            app:layout_constraintEnd_toEndOf="@id/icFavorite"
+            app:layout_constraintStart_toStartOf="@id/icFavorite"
+            app:layout_constraintTop_toBottomOf="@id/icFavorite" />
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginTop="@dimen/_16sdp"
+            android:layout_marginTop="@dimen/_4sdp"
             app:layout_constraintBottom_toTopOf="@id/viewSupported"
-            app:layout_constraintTop_toBottomOf="@id/icBack">
+            app:layout_constraintTop_toBottomOf="@id/textLikes">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
@@ -191,8 +204,6 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/textTitleComment"
                     tools:listitem="@layout/item_comment" />
-
-
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>

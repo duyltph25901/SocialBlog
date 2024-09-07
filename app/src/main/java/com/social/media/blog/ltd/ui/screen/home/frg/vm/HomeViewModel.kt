@@ -30,12 +30,14 @@ class HomeViewModel : ViewModel() {
     private val _isLoadingResponse = MutableLiveData<Boolean>()
     private val _categories = MutableLiveData<MutableList<CategoryModelDTO>>()
     private val _posts = MutableLiveData<MutableList<PostModelDTO>>()
+    private val _postRecentlyNews = MutableLiveData<MutableList<PostModelDTO>>()
 
     val isLoadingCategory: LiveData<Boolean> = _isLoadingCategory
     val isLoadingPostOne: LiveData<Boolean> = _isLoadingPostOne
     val isLoadingResponse: LiveData<Boolean> = _isLoadingResponse
     val categories: LiveData<MutableList<CategoryModelDTO>> = _categories
     val posts: LiveData<MutableList<PostModelDTO>> = _posts
+    val postRecentlyNews: LiveData<MutableList<PostModelDTO>> = _postRecentlyNews
 
     private val onEventListenerCategories: ValueEventListener
     private val onEventListenerPost: ValueEventListener
@@ -81,7 +83,12 @@ class HomeViewModel : ViewModel() {
     private fun createPostEventListener() = object : ValueEventListener {
         override fun onDataChange(snapshot: DataSnapshot) {
             val listPosts = getListPostsFromSnapShot(snapshot)
-            _posts.postValue(listPosts)
+            _posts.postValue(
+                listPosts.sortedByDescending { it.listIdUserLiked.size }.take(10).toMutableList()
+            )
+            _postRecentlyNews.postValue(
+                listPosts.sortedByDescending { it.createdAt}.toMutableList().take(15).toMutableList()
+            )
         }
 
         override fun onCancelled(error: DatabaseError) = postEmptyListPost()
@@ -111,7 +118,8 @@ class HomeViewModel : ViewModel() {
         viewModelScope.async(Dispatchers.IO) {
             postValueShowDialogLoading()
             val jsonCurrentUser = getJsonUserCache()
-            val currentUser = convertJsonToObject(jsonCurrentUser, UserModelDTO::class.java, context)
+            val currentUser =
+                convertJsonToObject(jsonCurrentUser, UserModelDTO::class.java, context)
             val idCurrentUser = getIdUser(currentUser)
             post.listIdUserLiked = updateListUserLiked(post, idCurrentUser)
             // update real time
@@ -151,7 +159,8 @@ class HomeViewModel : ViewModel() {
         viewModelScope.async(Dispatchers.IO) {
             postValueShowDialogLoading()
             val jsonCurrentUser = getJsonUserCache()
-            val currentUser = convertJsonToObject(jsonCurrentUser, UserModelDTO::class.java, context)
+            val currentUser =
+                convertJsonToObject(jsonCurrentUser, UserModelDTO::class.java, context)
             val idCurrentUser = getIdUser(currentUser)
             post.listComments = updateListUserComment(post, comment, idCurrentUser)
             // update real time
@@ -164,9 +173,10 @@ class HomeViewModel : ViewModel() {
         post.listComments.apply {
             add(
                 PostModelDTO.Comment(
-                idUser = idUser,
-                comment = comment,
-            ))
+                    idUser = idUser,
+                    comment = comment,
+                )
+            )
         }
 
     fun updateViewPostPlusOne(post: PostModelDTO) =

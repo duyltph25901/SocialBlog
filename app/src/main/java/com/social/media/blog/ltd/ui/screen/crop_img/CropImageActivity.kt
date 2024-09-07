@@ -80,6 +80,9 @@ class CropImageActivity : BaseActivity<ActivityCropImageBinding>() {
 
     private fun initCropImageView() = binding.cropImageView.apply {
         cropShape = CropImageView.CropShape.RECTANGLE
+        setFixedAspectRatio(true)
+        setAspectRatio(4, 3)
+        setMinCropResultSize(400, 300)
     }
 
     private fun handleDone() {

@@ -28,11 +28,11 @@
             android:id="@+id/loadingCategory"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:indeterminateTint="@color/primary"
             app:layout_constraintBottom_toBottomOf="@id/rcvCategory"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@id/rcvCategory"
-            android:indeterminateTint="@color/primary"/>
+            app:layout_constraintTop_toTopOf="@id/rcvCategory" />
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -46,7 +46,7 @@
                 android:layout_height="wrap_content">
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rcv2"
+                    android:id="@+id/rcvPostHighLight"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="@dimen/_4sdp"
@@ -60,12 +60,12 @@
                     android:id="@+id/loadingPost1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="@id/rcv2"
+                    android:elevation="@dimen/_10sdp"
+                    android:indeterminateTint="@color/primary"
+                    app:layout_constraintBottom_toBottomOf="@id/rcvPostHighLight"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/rcv2"
-                    android:elevation="@dimen/_10sdp"
-                    android:indeterminateTint="@color/primary"/>
+                    app:layout_constraintTop_toTopOf="@id/rcvPostHighLight" />
 
                 <TextView
                     android:id="@+id/textRecentNew"
@@ -78,10 +78,32 @@
                     android:textColor="#FF1B2251"
                     android:textSize="@dimen/_16ssp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/rcv2" />
+                    app:layout_constraintTop_toBottomOf="@id/rcvPostHighLight" />
+
+                <TextView
+                    android:id="@+id/textSeeAll"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:fontFamily="@font/font_semi_bold"
+                    android:text="See all >>"
+                    android:textColor="@color/text_gray"
+                    android:textSize="@dimen/_8ssp"
+                    app:layout_constraintBottom_toBottomOf="@id/textRecentNew"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textRecentNew" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="@dimen/_2sdp"
+                    android:background="#33959595"
+                    app:layout_constraintEnd_toEndOf="@id/textSeeAll"
+                    app:layout_constraintStart_toStartOf="@id/textSeeAll"
+                    app:layout_constraintTop_toBottomOf="@id/textSeeAll" />
 
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rcv3"
+                    android:id="@+id/rcvRecently"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="@dimen/_12sdp"

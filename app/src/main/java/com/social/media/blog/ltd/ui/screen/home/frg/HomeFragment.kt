@@ -3,14 +3,19 @@ package com.social.media.blog.ltd.ui.screen.home.frg
 import android.os.Bundle
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.social.media.blog.ltd.R
 import com.social.media.blog.ltd.commons.AppConst.FLAG_REQUEST_API_TRUE
 import com.social.media.blog.ltd.commons.AppConst.KEY_SHOW_POST_DETAIL
 import com.social.media.blog.ltd.commons.Routes
+import com.social.media.blog.ltd.commons.Routes.startAllPostActivity
 import com.social.media.blog.ltd.commons.SharedUtils
+import com.social.media.blog.ltd.commons.extention.click
 import com.social.media.blog.ltd.commons.extention.convertObjectToJson
 import com.social.media.blog.ltd.commons.extention.goneView
 import com.social.media.blog.ltd.commons.extention.hideKeyboard
+import com.social.media.blog.ltd.commons.extention.invisibleView
 import com.social.media.blog.ltd.commons.extention.toastMessageRes
 import com.social.media.blog.ltd.commons.extention.visibleView
 import com.social.media.blog.ltd.databinding.FragmentHomeBinding
@@ -18,6 +23,7 @@ import com.social.media.blog.ltd.model.dto.CategoryModelDTO
 import com.social.media.blog.ltd.model.dto.PostModelDTO
 import com.social.media.blog.ltd.ui.adapter.rcv.CategoryAdapter
 import com.social.media.blog.ltd.ui.adapter.rcv.PostAdapterTypeOne
+import com.social.media.blog.ltd.ui.adapter.rcv.PostAdapterTypeTwo
 import com.social.media.blog.ltd.ui.base.BaseFragment
 import com.social.media.blog.ltd.ui.dialog.LoadingResponseDialog
 import com.social.media.blog.ltd.ui.screen.home.frg.vm.HomeViewModel
@@ -32,6 +38,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private lateinit var categoryAdapter: CategoryAdapter
     private lateinit var postAdapterOne: PostAdapterTypeOne
+    private lateinit var postAdapterTwo: PostAdapterTypeTwo
     private lateinit var loadingDialog: LoadingResponseDialog
 
     override fun getLayoutFragment(): Int = R.layout.fragment_home
@@ -39,6 +46,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
     override fun initVariables() {
         initCategoryAdapter()
         initPostAdapterOne()
+        initPostAdapterTwo()
         initDialogResponseLoading()
     }
 
@@ -51,9 +59,15 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
                 setItemViewCacheSize(20)
             }
 
-            rcv2.apply {
+            rcvPostHighLight.apply {
                 adapter = postAdapterOne
                 setHasFixedSize(true)
+                clipToPadding = false
+                setItemViewCacheSize(20)
+            }
+
+            rcvRecently.apply {
+                adapter = postAdapterTwo
                 clipToPadding = false
                 setItemViewCacheSize(20)
             }
@@ -89,6 +103,16 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             posts.observe(viewLifecycleOwner) { listPosts ->
                 setNewDataPost(listPosts)
             }
+
+            postRecentlyNews.observe(viewLifecycleOwner) { listPosts ->
+                setNewDataPost2(listPosts)
+            }
+        }
+    }
+
+    override fun onClickViews() {
+        mBinding.apply {
+            textSeeAll.click { startAllPostActivity(requireActivity()) }
         }
     }
 
@@ -145,6 +169,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
         })
     }
 
+    private fun initPostAdapterTwo() {
+        postAdapterTwo = PostAdapterTypeTwo(showDetailsPost = { post, index ->
+            showDetailPost(post, index)
+        })
+    }
+
     private fun initDialogResponseLoading() {
         loadingDialog = LoadingResponseDialog(getContextScreen(), false)
     }
@@ -153,6 +183,9 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     private fun setNewDataPost(newData: MutableList<PostModelDTO>) =
         postAdapterOne.submitData(newData)
+
+    private fun setNewDataPost2(newData: MutableList<PostModelDTO>) =
+        postAdapterTwo.submitData(newData)
 
     private fun showLoadingCategory() =
         mBinding.loadingCategory.visibleView()

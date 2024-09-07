@@ -1,8 +1,7 @@
-package com.social.media.blog.ltd.ui.screen.post
+package com.social.media.blog.ltd.ui.screen.post.detail
 
 import android.content.Context
 import android.content.Intent
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -34,7 +33,7 @@ class PostDetailViewModel : ViewModel() {
     val postModelDomain: LiveData<PostModelDomain> = _postModelDomain
     val isLoading: LiveData<Boolean> = _isLoading
 
-    fun getValuePostModelDtoAndDomain(intent: Intent) = viewModelScope.launch(Dispatchers.IO) {
+    fun getValuePostModelDomain(intent: Intent) = viewModelScope.launch(Dispatchers.IO) {
         showLoading()
         val bundle = intent.extras
         bundle?.let { bundleNotNull ->
@@ -76,7 +75,7 @@ class PostDetailViewModel : ViewModel() {
                     }
                 }
             }
-            return@async Pair(listComments, author)
+            return@async Pair(listComments.sortedByDescending { it.comment.commentedAt }.toMutableList(), author)
         }
 
     private suspend fun fetchUsersDto(): MutableList<UserModelDTO> =
@@ -122,9 +121,6 @@ class PostDetailViewModel : ViewModel() {
                 .addOnFailureListener { continuation.resume(FLAG_REQUEST_API_FAIL) }
         }
 
-    fun refreshPostModelDomain(post: PostModelDomain) =
-        _postModelDomain.postValue(post)
-
     fun handleAddComment(post: PostModelDTO, comment: String, context: Context) =
         viewModelScope.async(Dispatchers.IO) {
             showLoading()
@@ -152,18 +148,9 @@ class PostDetailViewModel : ViewModel() {
                 .addOnFailureListener { continuation.resume(FLAG_REQUEST_API_FAIL) }
         }
 
-    suspend fun refreshPostModelDomainAfterComment(post: PostModelDomain){
-        val postModelDtoTemp = post.post
-        val def = getListCommentModelDomain(postModelDtoTemp)
-        val rs = def.await()
-        val listComments = rs.first
-        val author = rs.second
-        def.cancel()
-        val postModelDomainTemp = PostModelDomain(
-            post = postModelDtoTemp,
-            listComment = listComments,
-            author = author
-        )
-        _postModelDomain.postValue(postModelDomainTemp)
-    }
+    fun refreshPostModelDomainComment(comment: PostModelDomain.CommentModelDomain) =
+        _postModelDomain.value?.listComment?.add(comment)
+
+    fun refreshPostModelDomainLikeOrUnLike(postModelDto: PostModelDTO) =
+        postModelDto.also { _postModelDomain.value?.post = it }
 }

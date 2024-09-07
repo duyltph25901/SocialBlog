@@ -40,4 +40,9 @@ class CommentAdapter : BaseRecyclerView<PostModelDomain.CommentModelDomain>() {
 
     private fun getDateTimeByFormatAlreadyExist(current: Long, context: Context) =
         context.formatCurrentTimeTo_hh_mm_dd_MM_yyyy(current)
+
+    fun addToFirstListComment(item: PostModelDomain.CommentModelDomain) {
+        list.add(0, item)
+        notifyItemInserted(0)
+    }
 }

@@ -6,7 +6,8 @@ import android.os.Bundle
 import com.social.media.blog.ltd.ui.screen.home.HomeActivity
 import com.social.media.blog.ltd.ui.screen.intro.IntroActivity
 import com.social.media.blog.ltd.ui.screen.login.LoginActivity
-import com.social.media.blog.ltd.ui.screen.post.PostDetailActivity
+import com.social.media.blog.ltd.ui.screen.post.all.AllPostActivity
+import com.social.media.blog.ltd.ui.screen.post.detail.PostDetailActivity
 import com.social.media.blog.ltd.ui.screen.register.RegisterActivity
 
 object Routes {
@@ -34,6 +35,11 @@ object Routes {
     fun startPostDetailActivity(fromActivity: Activity, bundle: Bundle) =
         Intent(fromActivity, PostDetailActivity::class.java).apply {
             putExtras(bundle)
+            fromActivity.startActivity(this)
+        }
+
+    fun startAllPostActivity(fromActivity: Activity) =
+        Intent(fromActivity, AllPostActivity::class.java).apply {
             fromActivity.startActivity(this)
         }
 
