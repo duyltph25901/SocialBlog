@@ -46,4 +46,9 @@
     <string name="view_all_comments">View all %d comments</string>
     <string name="send">Send</string>
     <string name="some_thing_went_wrong">Some thing went wrong</string>
+    <string name="text_sample">Kể từ hôm nay - 01/09/2024, sự kiện HOT nhất trong quý 3 trên cộng đồng Viblo sẽ được khởi động để tìm ra những Trendsetters về Công nghệ mang tên Viblo Write &amp; Inspire Blogathon 2024. Tất cả những bài viết được publish trong tháng 9, đủ điều kiện xuất hiện trên Trending của Viblo sẽ là những bài viết được ghi nhận tham gia thành công sự kiện.\n\nCòn chần chừ gì nữa mà không bắt tay vào viết những bài viết chất lượng nhất để chia sẻ đến cộng đồng trong tháng 9 này. Đừng quên chia sẻ nó về trang cá nhân để bài viết có thể tiếp cận được nhiều độc giả nhất có thể nhé!\n\nThời gian diễn ra sự kiện\n\t*01/09/2024 - 30/09/2024\n\nCách thức tham gia</string>
+    <string name="write_your_comment_here">Write your comment here</string>
+    <string name="comments">Comments</string>
+    <string name="views">views</string>
+    <string name="one_view">1 view</string>
 </resources>
