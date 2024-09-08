@@ -38,12 +38,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/_2sdp"
             android:fontFamily="@font/font_regular"
-            tools:text="12 Likes"
             android:textColor="@color/text_gray"
             android:textSize="@dimen/_8ssp"
             app:layout_constraintEnd_toEndOf="@id/icFavorite"
             app:layout_constraintStart_toStartOf="@id/icFavorite"
-            app:layout_constraintTop_toBottomOf="@id/icFavorite" />
+            app:layout_constraintTop_toBottomOf="@id/icFavorite"
+            tools:text="12 Likes" />
 
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
@@ -148,6 +148,31 @@
                     app:layout_constraintStart_toEndOf="@id/containerAvatar"
                     app:layout_constraintTop_toTopOf="@id/containerAvatar"
                     tools:text="User name" />
+
+                <LinearLayout
+                    android:id="@+id/buttonFollow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/_16sdp"
+                    android:background="@drawable/bg_green"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:paddingHorizontal="@dimen/_12sdp"
+                    android:paddingVertical="@dimen/_8sdp"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="@id/containerAvatar"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/containerAvatar">
+
+                    <ImageView
+                        android:id="@+id/icFollow"
+                        android:layout_width="@dimen/_20sdp"
+                        android:layout_height="@dimen/_20sdp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/state_ic_follow"
+                        app:tint="@color/white" />
+
+                </LinearLayout>
 
                 <androidx.cardview.widget.CardView
                     android:id="@+id/containerImage"

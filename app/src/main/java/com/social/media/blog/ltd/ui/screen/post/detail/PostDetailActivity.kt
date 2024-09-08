@@ -9,7 +9,9 @@ import com.social.media.blog.ltd.R
 import com.social.media.blog.ltd.commons.AppConst.FLAG_REQUEST_API_TRUE
 import com.social.media.blog.ltd.commons.extention.click
 import com.social.media.blog.ltd.commons.extention.formatCurrentTimeTo_dd_MM_yyyy
+import com.social.media.blog.ltd.commons.extention.goneView
 import com.social.media.blog.ltd.commons.extention.toastMessageRes
+import com.social.media.blog.ltd.commons.extention.visibleView
 import com.social.media.blog.ltd.databinding.ActivityPostDetailBinding
 import com.social.media.blog.ltd.model.domain.PostModelDomain
 import com.social.media.blog.ltd.model.dto.PostModelDTO
@@ -58,6 +60,7 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding>() {
         icFavorite.click { likeOrUnLike(getIdUserCurrent()) }
         inputComment.addTextChangedListener(getTextWatcher())
         iconSend.click { eventSendComment() }
+        buttonFollow.click { toastMessageInComing() }
     }
 
     private fun initDialogLoading() {
@@ -83,7 +86,21 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding>() {
         textLikes.text =
             if (isLikesHigherThanOne(post)) "${getLikesOfPost(post)} ${getTextLikesRes()}" else getTextLike(post.post.listIdUserLiked.size)
         submitListCommentAdapter(post.listComment)
+
+        if (isIdReaderSameIdAuthor(post)) goneButtonFollow()
+        else visibleButtonFollow()
     }
+
+    private fun toastMessageInComing() = toastMessageRes(R.string.this_feature_will_be_released_soon)
+
+    private fun isIdReaderSameIdAuthor(post: PostModelDomain) =
+        post.author.idUser == getIdUserCurrent()
+
+    private fun goneButtonFollow() =
+        binding.buttonFollow.goneView()
+
+    private fun visibleButtonFollow() =
+        binding.buttonFollow.visibleView()
 
     private fun getDateTimeByFormatAlreadyExists(current: Long) =
         formatCurrentTimeTo_dd_MM_yyyy(current)
