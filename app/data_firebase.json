@@ -1,0 +1,565 @@
+{
+  "Categories": [
+    null,
+    {
+      "id": "1",
+      "img": {
+        "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fsport_topic%2Fgame-icons_sport-medal-1.png?alt=media&token=fc9060db-989e-409a-ad2f-5f4b7d263c8e",
+        "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fsport_topic%2Fgame-icons_sport-medal.png?alt=media&token=2018bc56-765a-4024-9cd4-463fc7a2ff76"
+      },
+      "name": "Sport"
+    },
+    {
+      "id": "2",
+      "img": {
+        "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fandroid_topic%2Fformkit_android.png?alt=media&token=1d0e3965-850c-4874-a0db-067b152f534e",
+        "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fandroid_topic%2Fformkit_android-1.png?alt=media&token=9370168d-f625-450a-b61f-a513fe6ba590"
+      },
+      "name": "Android"
+    },
+    {
+      "id": "3",
+      "img": {
+        "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fios_topic%2Ffa6-brands_app-store-ios.png?alt=media&token=35d68a2a-347a-43d2-8b49-2b4859b74575",
+        "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fios_topic%2Ffa6-brands_app-store-ios-1.png?alt=media&token=0f02ae04-4936-4924-937c-bebe543aaaad"
+      },
+      "name": "IOS"
+    },
+    {
+      "id": "4",
+      "img": {
+        "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fpicture_topic%2Fgridicons_camera.png?alt=media&token=f2f4a84d-4f15-488c-8c30-3bb90c364919",
+        "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fpicture_topic%2Fgridicons_camera-1.png?alt=media&token=a386a753-98be-4927-a3eb-82792896e78f"
+      },
+      "name": "Photograph"
+    },
+    {
+      "id": "5",
+      "img": {
+        "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Ftips_topic%2Fic_sharp-tips-and-updates.png?alt=media&token=a6236ee0-31fa-4b74-8961-dd0d74ad0f87",
+        "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Ftips_topic%2Fic_sharp-tips-and-updates-1.png?alt=media&token=d01dc97f-50a7-407e-83e1-da73e947a3ea"
+      },
+      "name": "Tips"
+    },
+    {
+      "id": "6",
+      "img": {
+        "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Ftravel_topic%2Fmaterial-symbols_travel-rounded-1.png?alt=media&token=c9bd269c-c0ec-44a7-bcb3-6142556fbc7b",
+        "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Ftravel_topic%2Fmaterial-symbols_travel-rounded.png?alt=media&token=b52f70aa-1188-4833-ad62-78afff3fe7a3"
+      },
+      "name": "Travel"
+    },
+    {
+      "id": "7",
+      "img": {
+        "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fmovie_topic%2Ftdesign_film-1.png?alt=media&token=e74ee50c-c9d8-4bb1-a72e-1a47b5641fc1",
+        "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fmovie_topic%2Ftdesign_film.png?alt=media&token=ca39fa8a-8765-4a4f-add6-bc9b1c53ca17"
+      },
+      "name": "Movie"
+    },
+    {
+      "id": "8",
+      "img": {
+        "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fart_topic%2Fmdi_art-1.png?alt=media&token=f1193fb7-198d-4e70-9c30-22d03767c210",
+        "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fart_topic%2Fmdi_art.png?alt=media&token=faceda29-8050-4cb3-8f90-390c1d6c793f"
+      },
+      "name": "Art"
+    },
+    {
+      "id": "9",
+      "img": {
+        "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fcar_topic%2Fion_car-sport-sharp-1.png?alt=media&token=1dfa02e1-3e76-471c-a28c-359883e55741",
+        "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fcar_topic%2Fion_car-sport-sharp.png?alt=media&token=da28c640-894b-4de8-988e-7494a35f30db"
+      },
+      "name": "Car"
+    },
+    {
+      "id": "10",
+      "img": {
+        "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Feducation_topic%2Fdashicons_welcome-learn-more-1.png?alt=media&token=4f106da0-e269-4cea-a75d-dc30516e6174",
+        "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Feducation_topic%2Fdashicons_welcome-learn-more.png?alt=media&token=be5aa2b1-b1d8-4f5b-bda9-098629f8c5fa"
+      },
+      "name": "Education"
+    },
+    {
+      "id": "11",
+      "img": {
+        "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fscience_topic%2Fmingcute_science-line-1.png?alt=media&token=62280e39-1284-4377-b3e1-45a64a20add9",
+        "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fscience_topic%2Fmingcute_science-line.png?alt=media&token=b2477e89-1d75-45c4-9484-bab6b699dec9"
+      },
+      "name": "Science"
+    },
+    {
+      "id": "12",
+      "img": {
+        "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fgaming_topic%2Fstreamline_ai-gaming-spark-solid-1.png?alt=media&token=698a7d81-59d5-48c9-9a4e-8d9cad2c8de3",
+        "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fgaming_topic%2Fstreamline_ai-gaming-spark-solid.png?alt=media&token=9fd99bbf-8613-4ec7-9dcc-1e7976f41e55"
+      },
+      "name": "Gaming"
+    }
+  ],
+  "Posts": {
+    "00d6f75f-dd10-4b96-8310-61fca1bd2aa5": {
+      "category": {
+        "id": "12",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fgaming_topic%2Fstreamline_ai-gaming-spark-solid-1.png?alt=media&token=698a7d81-59d5-48c9-9a4e-8d9cad2c8de3",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fgaming_topic%2Fstreamline_ai-gaming-spark-solid.png?alt=media&token=9fd99bbf-8613-4ec7-9dcc-1e7976f41e55"
+        },
+        "name": "Gaming"
+      },
+      "content": "Xin chào các game thủ,\n\nTrước hết, chúng tôi xin lỗi vì những sự cố gián đoạn và lỗi trong quá trình nhận vật phẩm gần đây. Chúng tôi đã nỗ lực khắc phục các vấn đề này và sau nhiều cân nhắc, đã quyết định chuyển cơ sở dữ liệu vật phẩm hiện tại sang cơ sở dữ liệu độc quyền của PUBG.\n\n\n\nHiện tại, chúng tôi đang sử dụng cơ sở dữ liệu của Steam, điều này gây ra nhiều khó khăn trong việc xử lý nhanh chóng các vấn đề liên quan đến Steam, chẳng hạn như chậm trễ máy chủ Steam.\n\n\n\nĐể cung cấp hệ thống vật phẩm ổn định hơn, chúng tôi sẽ chuyển từ cơ sở dữ liệu Steam sang cơ sở dữ liệu PUBG.\n\n\n\nVui lòng xem chi tiết và lịch trình bên dưới để biết thêm thông tin.\n\nThay đổi cơ sở dữ liệu vật phẩm\nThay đổi\nHiện tại: Cơ sở dữ liệu vật phẩm Steam\nMới: Cơ sở dữ liệu vật phẩm PUBG\nLịch trình triển khai\nNgày 10 tháng 10 năm 2024 (cùng với bản Cập Nhật #32.1)\nLưu ý quan trọng và ảnh hưởng của việc thay đổi cơ sở dữ liệu\nVấn đề chậm trễ hoặc lỗi trong việc nhận vật phẩm dự kiến sẽ được cải thiện.\nCác vật phẩm hiện có trong trò chơi sẽ không thay đổi.\n\nCác vật phẩm trong game PUBG sẽ không còn hiển thị trong mục Vật phẩm của Steam.\n\nTuy nhiên, các vật phẩm có thể giao dịch trên Thị trường Steam vẫn sẽ hiển thị trong kho hàng Steam.\n\n*Việc thay đổi cơ sở dữ liệu vật phẩm này chỉ giới hạn trên nền tảng Steam và không ảnh hưởng đến các nền tảng khác (Epic, Kakao).\n\nSau khi thay đổi cơ sở dữ liệu vật phẩm, bạn có thể gặp sự bất tiện khi không thể xem vật phẩm trong kho hàng Steam, ngoại trừ các vật phẩm có thể giao dịch trên thị trường.\n\n\n\nTuy nhiên, về lâu dài, chúng tôi đã đưa ra quyết định này để cung cấp dịch vụ tốt hơn thông qua phản hồi nhanh hơn cho người chơi.\n\n\n\nChúng tôi rất cảm ơn sự hiểu biết và kiên nhẫn của bạn.\n\n\n\nXin cảm ơn.\n\nĐội ngũ PUBG: BATTLEGROUNDS",
+      "createdAt": 1725779832232,
+      "id": "00d6f75f-dd10-4b96-8310-61fca1bd2aa5",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725779832290_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=99eebb86-05a7-4c0e-973d-3c67fb54b763",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725779832290_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "Thư thông báo thay đổi cơ sở dữ liệu vật phẩm",
+      "updateAt": 1725779832232,
+      "views": 1
+    },
+    "243cd84d-22ec-4ee6-af16-aaec30e13178": {
+      "category": {
+        "id": "12",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fgaming_topic%2Fstreamline_ai-gaming-spark-solid-1.png?alt=media&token=698a7d81-59d5-48c9-9a4e-8d9cad2c8de3",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fgaming_topic%2Fstreamline_ai-gaming-spark-solid.png?alt=media&token=9fd99bbf-8613-4ec7-9dcc-1e7976f41e55"
+        },
+        "name": "Gaming"
+      },
+      "content": "Cuối cùng thì Game Science - nhà phát triển \"tự lực\" đến từ Trung Quốc đã công bố cấu hình game Black Myth Wukong dành cho PC. Hãy tìm hiểu thêm thông tin cụ thể trong bài viết dưới đây nhé.\n\nBối cảnh, gameplay và cốt truyện Black Myth: Wukong\nBlack Myth: Wukong là tựa game lấy đề tài về cuộc hành trình của nhân vật chính Wukong (hay ở Việt Nam còn có cái tên thân thuộc là Tôn Ngộ Không). Tuy nhiên, bối cảnh lúc này không còn nằm trong bộ phim Tây Du Ký quen thuộc năm nào. Theo các giả thuyết phỏng đoán thì nhân vật chính Wukong ở đây là một trong số các biến thể khác của Tôn Ngộ Không. Cốt truyện game cũng có thể sẽ đen tối hơn bộ phim series kia rất nhiều khi lúc này nhân vật chính sẽ phải đối diện với hàng loạt quái vật sức mạnh rất lớn cùng bộ kỹ năng riêng biệt.\nĐể  có thể khắc họa được chân thực nhất cuộc hành trình vô cùng \"gian khổ\" này, lối chơi của Black Myth Wukong sẽ đi theo gameplay có phần tương đồng với các thể loại game soul-like như Dark Souls, Sekiro hay Elden Ring..., đồng nghĩa tất cả ker địch trong game sẽ độ khó cực cao cùng sát thương lớn. Nếu bạn không cẩn thận khi đối đầu trực diện thì mời bạn... về checkpoint hay điểm lưu game thử lại.\n\nCấu hình game Black Myth: Wukong PC\nGame Science đã chính thức công bố cấu hình tối thiểu và cấu hình đề nghị của game Black Myth Wukong PC hay cấu hình game wukong dành cho các độ phân giải 1080p, 4K.",
+      "createdAt": 1725709870614,
+      "id": "243cd84d-22ec-4ee6-af16-aaec30e13178",
+      "idAuthor": "6EFZvQa3pqWPGwHWiFfv9ywokyt1",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2F6EFZvQa3pqWPGwHWiFfv9ywokyt1%2F1725709870713_6EFZvQa3pqWPGwHWiFfv9ywokyt1.webp?alt=media&token=00156d75-4712-42c1-ba93-f0e4d87609ed",
+      "listComments": [
+        {
+          "comment": "hay",
+          "commentedAt": 1725710195905,
+          "idUser": "xdPVyHaq0dh9zgz19x8YoHPeeqO2"
+        },
+        {
+          "comment": "hi",
+          "commentedAt": 1725717231981,
+          "idUser": "6EFZvQa3pqWPGwHWiFfv9ywokyt1"
+        },
+        {
+          "comment": "hell",
+          "commentedAt": 1725771851021,
+          "idUser": "xdPVyHaq0dh9zgz19x8YoHPeeqO2"
+        }
+      ],
+      "listIdUserLiked": [
+        "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+        "6EFZvQa3pqWPGwHWiFfv9ywokyt1"
+      ],
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/6EFZvQa3pqWPGwHWiFfv9ywokyt1/1725709870713_6EFZvQa3pqWPGwHWiFfv9ywokyt1.webp",
+      "public": true,
+      "title": "Cấu hình Black Myth Wukong cần nhiều RAM, ổ cứng khủng",
+      "updateAt": 1725709870614,
+      "views": 51
+    },
+    "3d90bd6e-4292-4c65-aaff-1cb93c02c551": {
+      "category": {
+        "id": "9",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fcar_topic%2Fion_car-sport-sharp-1.png?alt=media&token=1dfa02e1-3e76-471c-a28c-359883e55741",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fcar_topic%2Fion_car-sport-sharp.png?alt=media&token=da28c640-894b-4de8-988e-7494a35f30db"
+        },
+        "name": "Car"
+      },
+      "content": "It’s a bloodbath this month for German new car sales, down -27.8% year-on-year in August to just 197,322. This mediocre result tilts the year-to-date tally into negative at -0.3% to 1,907,226. We are now -37% below the pre-pandemic August 2019 volume (313,748) and -24% below the 8 months 2019 result (2,495,536). Of note is the implosion of BEV sales off -68.8% year-on-year to 27,024 and 13.7% share vs. 86,649 and 31.7% share, admittedly helped by the year-ago rush to register EV before subsidies dry out. YTD BEV sales are down -32% to 241,911 and 12.7% share vs. 18.6% over the first 8 months of 2023.\n\nLooking at the brands ranking, Volkswagen (-23.3%) holds 17.9% of the market vs. 19.2% so far this year, with Mercedes (-15.5%) and BMW (-23%) also containing their losses somewhat. Skoda (+0.03%) manages the impressive feat of staying stable year-on-year and overtakes Audi (-36.6%) – hit particularly hard – both for the month and year-to-date to #4. Seat (-10.1%), Toyota (-12.3%) and Opel (-17.1%) also resist but Ford (-28%) and Hyundai (-31.2%) fall fast. Volvo (+18.8%), Lexus (+17%), Peugeot (+16.9%) and Mitsubishi (+7.1%) are among the rare year-on-year gainers further down the charts. Tesla is off -65.7% and the Chinese carmakers freefall: MG is down -75.8%, GWM down -88.7% and BYD down -89.3%.\n\nModel-wise, the VW T-Roc (-11.4%) threepeats at #1 with 2.9% share, still not enough to grab the YTD lead. Below the VW Tiguan (-1.3%) is up two spots on July to #2, the event of the month is the Opel Astra (+102.3%) more than doubling its sales year-on-year to overtake its (former) archenemy the VW Golf (-35.6%). According to our records, the last time the Astra outsold the Golf was in 1992 when the first generation Astra topped the charts from January to March. The Astra now ranks #5 year-to-date vs. #29 over the Full Year 2023. The Skoda Octavia (+19.7%) posts a stellar year-on-year increase to remain inside the Top 5. Excellent month as well for the VW Polo (+41.2%) up 11 ranks on last month to #6. We welcome the Alfa Romeo Junior at #234 and the Renault 5 at #269.",
+      "createdAt": 1725710082802,
+      "id": "3d90bd6e-4292-4c65-aaff-1cb93c02c551",
+      "idAuthor": "6EFZvQa3pqWPGwHWiFfv9ywokyt1",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2F6EFZvQa3pqWPGwHWiFfv9ywokyt1%2F1725710082877_6EFZvQa3pqWPGwHWiFfv9ywokyt1.webp?alt=media&token=6a8cb21f-ce1d-44a3-92cd-fb014fbae7a5",
+      "listComments": [
+        {
+          "comment": "chuẩn",
+          "commentedAt": 1725710216707,
+          "idUser": "xdPVyHaq0dh9zgz19x8YoHPeeqO2"
+        },
+        {
+          "comment": "ji",
+          "commentedAt": 1725717157691,
+          "idUser": "6EFZvQa3pqWPGwHWiFfv9ywokyt1"
+        },
+        {
+          "comment": "ji",
+          "commentedAt": 1725717198465,
+          "idUser": "6EFZvQa3pqWPGwHWiFfv9ywokyt1"
+        }
+      ],
+      "listIdUserLiked": [
+        "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+        "6EFZvQa3pqWPGwHWiFfv9ywokyt1"
+      ],
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/6EFZvQa3pqWPGwHWiFfv9ywokyt1/1725710082877_6EFZvQa3pqWPGwHWiFfv9ywokyt1.webp",
+      "public": true,
+      "title": "Germany August 2024: Market off -27.8%, BEVs down -68.8%, Opel Astra outsells VW Golf",
+      "updateAt": 1725710082802,
+      "views": 29
+    },
+    "457fb1d6-3822-415c-9a53-e91d8b2a106d": {
+      "category": {
+        "id": "1",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fsport_topic%2Fgame-icons_sport-medal-1.png?alt=media&token=fc9060db-989e-409a-ad2f-5f4b7d263c8e",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fsport_topic%2Fgame-icons_sport-medal.png?alt=media&token=2018bc56-765a-4024-9cd4-463fc7a2ff76"
+        },
+        "name": "Sport"
+      },
+      "content": "de Minaur got to see Rafael Nadal close-up earlier this year when he played him in back-to-back tournaments on clay. One win and one defeat was a healthy return for the Australian on Nadal’s favourite surface, even if the 22-time grand slam champion was only making his way back from injury at the time. But as he continues to plot his way through the draw at the US Open, it is Nadal’s philosophy that is helping De Minaur impose himself on his opponents.\n\nIt  was back in 2012, when he was assessing Andy Murray’s defeat by Novak Djokovic in the semi-finals of the Australian Open, that Nadal gave an insight into the attitude that helped to make him such a formidable competitor. Murray had led Djokovic two sets to one, only to suffer a physical and mental dip in the fourth set. He recovered in the fifth but Djokovic held on to reach the final. Murray’s mistake was to let Djokovic get away just when he had the momentum himself.\n\n\"Winning two sets to one… winning with 7‑6, to win a tournament like this and to play against a player like Djokovic, you cannot start the fourth set like this,” he said. “It’s the moment to play with more intensity than ever, not start with 3‑0 down and two breaks in five minutes. That way you lose the match. You want to win the tournament, you cannot start – you can lose, the other can beat you – but you cannot lose in the beginning. When the other has more doubts, is in real trouble, you [can’t] make it easier than what should be, no?”",
+      "createdAt": 1725780369813,
+      "id": "457fb1d6-3822-415c-9a53-e91d8b2a106d",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725780369896_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=3103a31a-6935-47ca-bfcd-1ca8d19e9e33",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725780369896_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "Alex de Minaur channels his inner-Nadal to crank up intensity at US Open",
+      "updateAt": 1725780369813,
+      "views": 1
+    },
+    "47def2db-de13-46a4-9ab7-b1b654e0c8be": {
+      "category": {
+        "id": "7",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fmovie_topic%2Ftdesign_film-1.png?alt=media&token=e74ee50c-c9d8-4bb1-a72e-1a47b5641fc1",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fmovie_topic%2Ftdesign_film.png?alt=media&token=ca39fa8a-8765-4a4f-add6-bc9b1c53ca17"
+        },
+        "name": "Movie"
+      },
+      "content": "New adventure, new rival, and an unexpected ally as Paramount Pictures releases the official trailer for their upcoming sequel film Sonic the Hedgehog 3. View trailer below.\n\nSonic, Tails, and Knuckles are pitted against a mysterious and powerful new adversary, Shadow the Hedgehog. The trio seeks out an unlikely alliance with Dr. Robotnik in hopes of stopping Shadow and protecting the planet.\n\nLike many, I was wondering when the official trailer preview for this upcoming project was going to come out. Thankfully, it’s here and it looks to be a wild ride. I did find Sonic the Hedgehog 2 to be a great time and was superior to the original film, providing plenty of new context, characters, and fan service into the mix that definitely worked for some fun popcorn flick. Sonic 3 seems to continue that trend with the trailer showcasing plenty of new footage from this sequel feature. The return of Carrey’s Robotnik is definitely worth the wait, and I’m stoked to see him back and funnier than ever. Plus, the first appearance of Shadow the Hedgehog, who is being voiced by Keanu Reeves, looks to be a great character foil for Schwartzman’s Sonic and Elba’s Knuckles. All in all, I’m quite excited to see what this third installment in this film series has to offer and what a great way to bring the holiday season a celebratory end with a penultimate release like this.",
+      "createdAt": 1725781056819,
+      "id": "47def2db-de13-46a4-9ab7-b1b654e0c8be",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725781056942_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=8dff0a1d-0a9c-475c-8c50-b19deff0a817",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725781056942_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "Sonic the Hedgehog 3 Official Trailer",
+      "updateAt": 1725781056819,
+      "views": 1
+    },
+    "497f3c87-4f27-4e5e-be90-89e009c938ce": {
+      "category": {
+        "id": "10",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Feducation_topic%2Fdashicons_welcome-learn-more-1.png?alt=media&token=4f106da0-e269-4cea-a75d-dc30516e6174",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Feducation_topic%2Fdashicons_welcome-learn-more.png?alt=media&token=be5aa2b1-b1d8-4f5b-bda9-098629f8c5fa"
+        },
+        "name": "Education"
+      },
+      "content": "From prepping lunches to establishing bedtime routines, the back-to-school tasks for parents can feel endless! Luckily, we’ve compiled a checklist to prepare you for the new year, plus links to resources to meet every child at their level.\n\nCheck off the list below so you don’t forget a thing! \n\nPre-K checklist\nPrepare healthy lunches and snacks, and get the kids involved in the cooking.\nDiscover kid-friendly recipes for preschool! \nAdd school events to your calendar.\nYou can use this back-to-school calendar to plan out the first month of school, from drop-off times to after-school activities, and meet-the-teacher night. \nLabel everything, from backpacks to lunch boxes. This will make it easier for you and your child, as young kids tend to leave items on the playground or in the classroom.\nFor a quick and easy solution, print these name labels for kids.\nEstablish a consistent bedtime, and start practicing your nighttime routine before the summer ends.\nGet a bedtime chart based on your child’s age in this Parent’s Guide to Preschool, Part 4.\nRead with your child daily to help them build literacy skills.\nExplore proven tips for reading with your child in this Parent’s Guide to Preschool, Part 2.\nTo get them excited about reading, click through our library of leveled books featuring colorful illustrations and audio narration.\nUse this Reading Interest Survey and What I Like to Read worksheet to select books that fit your child’s preferences.\nHelp your new student build relationships with their peers.\nDiscover fundamental social-emotional learning activities for young children in this Parent’s Guide to Preschool, Part 3).\nMake time to develop a connection with your child’s teacher.\nLearn how to forge a positive school-home connection in this Parent’s Guide to Preschool, Part 1.\nRecognize the importance of play, and use educational resources to play with your child at home.\nMake home-based learning fun with these hands-on activities, crafts, and memory games!\nHelp them hone their writing skills before the new school year begins.\nIncorporate this Prewriting Skills: Vertical Lines worksheet into your after-school routine to get a head-start on letter formation.\nNote key physical and cognitive milestones throughout the year.\nGet the full list of milestones to look forward to in this Parent’s Guide to Preschool, Part 1.",
+      "createdAt": 1725781457312,
+      "id": "497f3c87-4f27-4e5e-be90-89e009c938ce",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725781457430_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=7217b146-afee-44a2-8fc3-7937db4f9b5f",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725781457430_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "From backpacks to bus stops: Back-to-school checklist for parents!",
+      "updateAt": 1725781457312,
+      "views": 1
+    },
+    "541b8372-4899-44ca-80fe-9c701b77252b": {
+      "category": {
+        "id": "11",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fscience_topic%2Fmingcute_science-line-1.png?alt=media&token=62280e39-1284-4377-b3e1-45a64a20add9",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fscience_topic%2Fmingcute_science-line.png?alt=media&token=b2477e89-1d75-45c4-9484-bab6b699dec9"
+        },
+        "name": "Science"
+      },
+      "content": "Venus is the second planet from the Sun, and Earth's closest planetary neighbor. Venus is the third brightest object in the sky after the Sun and Moon. Venus spins slowly in the opposite direction from most planets.\n\nVenus is similar in structure and size to Earth, and is sometimes called Earth's evil twin. Its thick atmosphere traps heat in a runaway greenhouse effect, making it the hottest planet in our solar system with surface temperatures hot enough to melt lead. Below the dense, persistent clouds, the surface has volcanoes and deformed mountains.\n\nThe ancient Romans could easily see seven bright objects in the sky: the Sun, the Moon, and the five brightest planets: Mercury, Venus, Mars, Jupiter, and Saturn. They named the objects after their most important gods.\n\nVenus is named for the ancient Roman goddess of love and beauty, who was known as Aphrodite to the ancient Greeks. Most features on Venus are named for women. It’s the only planet named after a female god.\n\nThirty miles up (about 50 kilometers) from the surface of Venus temperatures range from 86 to 158 Fahrenheit (30 to 70 Celsius). This temperature range could accommodate Earthly life, such as “extremophile” microbes. And atmospheric pressure at that height is similar to what we find on Earth’s surface.\n\nAt the tops of Venus’ clouds, whipped around the planet by winds measured as high as 224 mph (360 kph), we find another transformation. Persistent, dark streaks appear. Scientists are so far unable to explain why these streaks remain stubbornly intact, even amid hurricane-force winds. They also have the odd habit of absorbing ultraviolet radiation.\n\nThe most likely explanations focus on fine particles, ice crystals, or even a chemical compound called iron chloride. Although it's much less likely, another possibility considered by scientists who study astrobiology is that these streaks could be made up of microbial life, Venus-style. Astrobiologists note that ring-shaped linkages of sulfur atoms, known to exist in Venus’ atmosphere, could provide microbes with a kind of coating that would protect them from sulfuric acid. These handy chemical cloaks would also absorb potentially damaging ultraviolet light and re-radiate it as visible light.\n\nSome of the Russian Venera probes did, indeed, detect particles in Venus’ lower atmosphere about a micron in length – roughly the same size as a bacterium on Earth.\n\nNone of these findings provide compelling evidence for the existence of life in Venus’ clouds. But the questions they raise, along with Venus’ vanished ocean, its violently volcanic surface, and its hellish history, make a compelling case for missions to investigate our temperamental sister planet. There is much, it would seem, that she can teach us.",
+      "createdAt": 1725781948549,
+      "id": "541b8372-4899-44ca-80fe-9c701b77252b",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725781948595_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=9f0761f0-4f40-4421-b48f-c3302d0b2e4c",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725781948595_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "Venus is the second planet from the Sun, and the sixth largest planet. It’s the hottest planet in our solar system.",
+      "updateAt": 1725781948549,
+      "views": 1
+    },
+    "5d97ee38-d68d-4c60-8411-004d4f379efb": {
+      "category": {
+        "id": "2",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fandroid_topic%2Fformkit_android.png?alt=media&token=1d0e3965-850c-4874-a0db-067b152f534e",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fandroid_topic%2Fformkit_android-1.png?alt=media&token=9370168d-f625-450a-b61f-a513fe6ba590"
+        },
+        "name": "Android"
+      },
+      "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      "createdAt": 1725771661444,
+      "id": "5d97ee38-d68d-4c60-8411-004d4f379efb",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725771664949_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=c1541430-6c00-4ecb-b858-a9e7f9d0c866",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725771664949_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "HOW TO FIX BUG IN ANDROID STUDIO FOR ANDROID DEVELOPER? THIS IS SAMPLE SOLUTION FOR YOU",
+      "updateAt": 1725771661444,
+      "views": 4
+    },
+    "5e8e0eb3-2ac2-47ca-a940-0fee998b47c7": {
+      "category": {
+        "id": "10",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Feducation_topic%2Fdashicons_welcome-learn-more-1.png?alt=media&token=4f106da0-e269-4cea-a75d-dc30516e6174",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Feducation_topic%2Fdashicons_welcome-learn-more.png?alt=media&token=be5aa2b1-b1d8-4f5b-bda9-098629f8c5fa"
+        },
+        "name": "Education"
+      },
+      "content": "Affirmations are powerful! As the new school year kicks off, teachers can refer to the following wise words for support and guidance. From inspirational quotes to relatable sayings, these motivational messages show teachers that they’re not alone, even when the going gets tough:\n\nWords of affirmation for the new school year\nTeachers, we recognize that the first few weeks of school can be an exciting and challenging time. Consider implementing daily affirmations as a way to practice self care and foster a positive mindset. \n\nThe following quotes evoke feelings of hope and perseverance, while also serving as a reminder that it’s okay to slow down and rest, take a nontraditional path, and even make occasional mistakes:",
+      "createdAt": 1725781334855,
+      "id": "5e8e0eb3-2ac2-47ca-a940-0fee998b47c7",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725781334982_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=be3d1888-e780-40e1-947d-d49002750a60",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725781334982_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "Words of affirmation to get you through the first few weeks of school",
+      "updateAt": 1725781334855,
+      "views": 1
+    },
+    "5eeea984-1b04-4c2a-a04e-0180c07bf8bb": {
+      "category": {
+        "id": "3",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fios_topic%2Ffa6-brands_app-store-ios.png?alt=media&token=35d68a2a-347a-43d2-8b49-2b4859b74575",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fios_topic%2Ffa6-brands_app-store-ios-1.png?alt=media&token=0f02ae04-4936-4924-937c-bebe543aaaad"
+        },
+        "name": "IOS"
+      },
+      "content": "An app onboarding can be seen as a funnel full of steps toward the key action of your application. A user installs your app, enters an explanatory onboarding, and starts using the app with the knowledge gained. Each step in the funnel is vital for ensuring the user knows how to use the app, but each step is also a potential drop-off moment. Visualizing and optimizing these individual steps is essential to increase in-app conversions.\n\nWhat many need to remember is that the onboarding funnel starts outside of the app. The first moment a user sees your app is the first step of the funnel, followed by an App Store page and the actual in-app onboarding. Secondly, it’s essential to know your app’s key action that leads to the most user satisfaction or paid conversions. Depending on your funnel optimization goal, this key action will help you track the performance. In this article, I’ll share learnings from the “Marketing and Audience Growth” course module found at going-indie.com.\n\nDefining your app’s key action and result\nYour app likely contains many features, some more important than others. When optimizing your app, you will set a conversion goal you want to improve. A typical example is to focus on in-app conversions toward a paid subscription.\n\nUsing analytics, you can define which actions lead to an in-app conversion. From those actions, there will likely be one or more that lead to a paid conversion the most. For example, my developer tool RocketSim often leads to a paid conversion when the user inspects network traffic using the Xcode Simulator. In this example, the key action would be inspecting network traffic, and the key result is a conversion to a paid subscription.",
+      "createdAt": 1725780657443,
+      "id": "5eeea984-1b04-4c2a-a04e-0180c07bf8bb",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725780657484_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=cbd21788-8da6-4e10-8b79-4e3f99f7101f",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725780657484_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "App onboarding funnel optimization to increase conversions",
+      "updateAt": 1725780657443,
+      "views": 1
+    },
+    "7fa91ecc-fc72-4686-a796-eeecb377f9f7": {
+      "category": {
+        "id": "3",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fios_topic%2Ffa6-brands_app-store-ios.png?alt=media&token=35d68a2a-347a-43d2-8b49-2b4859b74575",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fios_topic%2Ffa6-brands_app-store-ios-1.png?alt=media&token=0f02ae04-4936-4924-937c-bebe543aaaad"
+        },
+        "name": "IOS"
+      },
+      "content": "Giao diện màn hình khóa hoàn toàn mới\nMột trong những nâng cấp nổi bật nhất trên iOS 16 là hỗ trợ tùy chỉnh trên màn hình khóa. Bản cập nhật này cho phép người dùng có thể thoải mái tùy chỉnh chiếc điện thoại iPhone của mình theo sở thích, phong cách khác nhau. Với phiên bản này, bạn hoàn toàn có thể thêm các Widget, thay đổi phông chữ, màu sắc hiển thị theo các bộ lọc khác nhau thay vì quen với những cài đặt mặc định như trước đây.\n\nNgười dùng cũng có thể tạo ra nhiều màn hình khóa và chuyển đổi qua lại giữa chúng. Ngoài ra, với những bức ảnh chân dung thì bạn có thể tùy chỉnh tính năng Hiệu ứng chuyên sâu giúp tạo hiệu ứng 3D cho màn hình khóa vô cùng ấn tượng. Apple cũng cho phép người dùng thiết lập các tiện ích của bên thứ 3 ra bên ngoài màn hình khóa, tương tự như cách chúng hoạt động trên màn hình chính.",
+      "createdAt": 1725780793647,
+      "id": "7fa91ecc-fc72-4686-a796-eeecb377f9f7",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725780793699_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=db43aed2-cc8a-4fa0-ada4-4298527453a2",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725780793699_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "iOS 16 có gì mới? Những tính năng nổi bật có trên iOS 16",
+      "updateAt": 1725780793647,
+      "views": 1
+    },
+    "949d6db8-5662-41b6-8f88-87200130e1c3": {
+      "category": {
+        "id": "6",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Ftravel_topic%2Fmaterial-symbols_travel-rounded-1.png?alt=media&token=c9bd269c-c0ec-44a7-bcb3-6142556fbc7b",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Ftravel_topic%2Fmaterial-symbols_travel-rounded.png?alt=media&token=b52f70aa-1188-4833-ad62-78afff3fe7a3"
+        },
+        "name": "Travel"
+      },
+      "content": "Trekking Nepal luôn là mơ ước của nhiều trekker, ai cũng mong muốn được 1 lần trong đời bước đi dưới dãy núi Himalaya huyền thoại. Tuy nhiên mới lần đầu tiên đi trekking ở nepal ai cũng có những bỡ ngỡ không biết nên chuẩn bị những  gì. Ngay bản thân mình lần đầu tiên cũng vậy phải tìm hỏi khắp nơi để xin kinh nghiệm, vậy nên bài viết này mình sẽ tổng hợp kinh nghiệm, lưu ý khi trekking Nepal 1 cách dễ hiểu nhất.\n\n1. Lưu ý khi trekking Nepal\n    • Chọn cung trekking Nepal \n          Nepal có hàng trăm hàng chục cung trek khác nhau, từ những cung ngắn 3 ngày cho tới cung 30 ngày cũng có. Từ những cung lên khoảng 2000m cho tới những cung lên tới 6000m cũng có.  Vậy làm sao chọn cho mình 1 cung trek phù hợp? \n\nĐể chọn cũng trek phù hợp thì đây là 3 tiêu chí mà mình đưa ra cho các bạn tham khảo: \n               - Dựa trên số ngày:  nếu bạn chỉ xin nghỉ phép được từ 7 cho tới 10 ngày thì nên chọn những cung trek tầm 5 ngày hoặc 7 ngày ví dụ Annapurna Base Camp, Mardi Himal, Langtang.\n                - Dựa trên sức khỏe: Thường những cung trek ở Nepal khoảng 2-3 ngày đầu thì đi sẽ rất nhẹ nhàng, nhưng khi đi càng lâu càng lên cao sẽ rất đuối. Vì thế phải xem sức khoẻ của mỗi người như thế nào để chọn cung phù hợp, đặc biệt là sức bền. Ngoài ra còn tính thích ứng với độ cao trong điều kiện oxy bị loạng hay còn gọi là chứng say độ cao của mỗi người như thế nào. Nếu bạn bị say độ cao nặng cũng không nên chọn những cung quá 4000m.\n    • Rủ bạn đi trekking Nepal chung\n          Thường những cung trek sẽ rơi vào tầm 5 ngày trở lên là đẹp, đi bộ đường dài thì nên có thêm bạn bè đi cùng. Để có thể chia sẻ với nhau những khoảnh khắc đẹp, và cũng share thêm chi phí trên đường đi trek.\n\n2. Kết lại\n    Trekking Nepal là 1 các gì đó rất đặc biệt, việc bạn bước chậm cảm nhận từng nhịp thở bên dưới dãy núi Himalaya huyền thoại sẽ cho bạn trải nghiệm khác hoàn toàn với nơi khác. Hy vọng bài viết lưu ý khi trekking Nepal sẽ giúp bạn chuẩn bị kỹ mọi thứ và có 1 chuyến trek đầy trải nghiệm nhé.",
+      "createdAt": 1725779459519,
+      "id": "949d6db8-5662-41b6-8f88-87200130e1c3",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725779459624_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=f2d09a94-2008-4abe-a8e7-a53062b86186",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725779459624_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "10 lưu ý giúp bạn tự tin đi trekking ở Nepal",
+      "updateAt": 1725779459519,
+      "views": 1
+    },
+    "9a73e975-843f-4f32-a15c-1c2067802862": {
+      "category": {
+        "id": "4",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fpicture_topic%2Fgridicons_camera.png?alt=media&token=f2f4a84d-4f15-488c-8c30-3bb90c364919",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fpicture_topic%2Fgridicons_camera-1.png?alt=media&token=a386a753-98be-4927-a3eb-82792896e78f"
+        },
+        "name": "Photograph"
+      },
+      "content": "Chụp lặp đi lặp lại 1 địa điểm ? \n\nANh em nào đã trải qua tình trạng chụp 1 đối tượng, 1 không gian mỗi ngày và lặp đi lặp lại trong khoảng thời gian dài chưa ? Cái gì lặp đi lặp lại hàng ngày thì nó cũng sẽ chai lì và hết cảm xúc nếu …  ? Nó đã từng xảy ra với mình. \n\nĐó là mối quan tâm mà mình nghĩ ai rồi cũng sẽ trải qua. Nó thách thức giới hạn bản thân, để bản thân đi tìm cách nhìn mới, tìm lại cảm xúc mới, mài dũa khả năng nhìn bằng mắt. Nó có thể bóp chết mood chụp hình của bạn và cũng có thể để khả năng sáng tạo của bạn thăng hoa.\n\n1. TÌM KIẾM ÁNH SÁNG \nMình hay thoái thác tìm lý do để lười chụp vì chán, vì ánh sáng trong nhà không đủ tốt, vì máy ảnh không đẹp, vì decor không đúng cái mình thích ,, bla bla bla một khi đã lười thì lý do sẽ có muôn vạn hình dạng …… Nhưng mình tạo thông lệ mỗi ngày đều cầm máy chụp 1 cái gì đó để edit,để đăng đã chứng minh mình sai. Mình luôn tìm được hướng để chụp cái mà mình định chụp. \n\nMọi thứ mình chụp trong nhà đều liên quan đến cái cửa sổ :)) vì nó là nguồn sáng mềm và rõ nhất trong nhà, mình cố gắng để khu đó nó sạch, thoáng nhất có thể, đồ đạc ít để bớt phân tâm nhiều trong ảnh. \n\n2. TẬP DỰ ĐOÁN TRƯỚC HÌNH ẢNH SẼ RA NHƯ THẾ NÀO\nMình chụp ảnh về những con mèo mỗi ngày, nên càng ngày càng trở nên tinh ý hơn. Mình đoán chính xác thời điểm con mèo sẽ ngó về hướng mình hay cong mình đi chỗ khác. Điều này không xảy ra trong 1 sớm 1 chiều, mà là kết qủa của việc chụp hàng ngày. \n Dành nhiều thời gian quan sát xung quoanh, nó có thể sẽ giúp được nhiều về phép dự đoán những khoảnh khắc có thể chụp hơn là bạn điên cuồng đi tìm kiếm. Hãy chụp lifestyle trong cuộc sống của bản thân nhiều thật nhiều, rồi anh em sẽ thấy nó rất hữu dụng trong ảnh cưới, đặc biệt về góc nhìn.",
+      "createdAt": 1725780138982,
+      "id": "9a73e975-843f-4f32-a15c-1c2067802862",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725780139166_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=9c3f6377-b351-4a58-84c6-de4253089553",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725780139166_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "TIPS CẢI THIỆN KHẢ NĂNG CHỤP ẢNH LẶP LẠI 1 ĐỊA ĐIỂM HÀNG NGÀY",
+      "updateAt": 1725780138982,
+      "views": 1
+    },
+    "9af334be-0091-4c1f-adc6-3cc8b9164600": {
+      "category": {
+        "id": "2",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fandroid_topic%2Fformkit_android.png?alt=media&token=1d0e3965-850c-4874-a0db-067b152f534e",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fandroid_topic%2Fformkit_android-1.png?alt=media&token=9370168d-f625-450a-b61f-a513fe6ba590"
+        },
+        "name": "Android"
+      },
+      "content": "Kể từ hôm nay - 01/09/2024, sự kiện HOT nhất trong quý 3 trên cộng đồng Viblo sẽ được khởi động để tìm ra những Trendsetters về Công nghệ mang tên Viblo Write & Inspire Blogathon 2024. Tất cả những bài viết được publish trong tháng 9, đủ điều kiện xuất hiện trên Trending của Viblo sẽ là những bài viết được ghi nhận tham gia thành công sự kiện.\n\nCòn chần chừ gì nữa mà không bắt tay vào viết những bài viết chất lượng nhất để chia sẻ đến cộng đồng trong tháng 9 này. Đừng quên chia sẻ nó về trang cá nhân để bài viết có thể tiếp cận được nhiều độc giả nhất có thể nhé!\n\n\nThời gian diễn ra sự kiện\n    01/09/2024 - 30/09/2024\n\nCách thức tham gia\nĐăng tải bài viết trên Viblo trong thời gian diễn ra sự kiện, bài viết thoả mãn Lọt top trending của Viblo trong thời gian diễn ra sự kiện\n\nLưu ý: Một tác giả có thể viết nhiều bài viết để tham gia, không cộng dồn điểm của các bài viết\n\nLiên hệ\nMọi thông tin về sự kiện sẽ được cập nhật chính thức qua Announcement trên viblo.asia và Fanpage Viblo. Ngoài ra, người chơi có thể liên hệ theo thông tin bên dưới để được hỗ trợ trong quá trình tham gia sự kiện:\n    • Gửi tin nhắn trực tiếp tới Fanpage Viblo\n    • Gửi email tới contact@viblo.asia\n    • Điện thoại: 0888.712.838 (Ms. Linh) (các tình huống khẩn cấp)",
+      "createdAt": 1725707699094,
+      "id": "9af334be-0091-4c1f-adc6-3cc8b9164600",
+      "idAuthor": "6EFZvQa3pqWPGwHWiFfv9ywokyt1",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2F6EFZvQa3pqWPGwHWiFfv9ywokyt1%2F1725707699188_6EFZvQa3pqWPGwHWiFfv9ywokyt1.webp?alt=media&token=f3e3b7d3-36dc-4a24-a87b-56d2b61d5855",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/6EFZvQa3pqWPGwHWiFfv9ywokyt1/1725707699188_6EFZvQa3pqWPGwHWiFfv9ywokyt1.webp",
+      "public": true,
+      "title": "🔥 [Viblo Write & Inspire Blogathon 2024] Chính Thức Bắt Đầu Tìm Kiếm Những Trendsetters Trên Viblo🔥",
+      "updateAt": 1725707699094,
+      "views": 14
+    },
+    "a3e594fe-fc25-4ea3-a335-ba183eb43fba": {
+      "category": {
+        "id": "7",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fmovie_topic%2Ftdesign_film-1.png?alt=media&token=e74ee50c-c9d8-4bb1-a72e-1a47b5641fc1",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fmovie_topic%2Ftdesign_film.png?alt=media&token=ca39fa8a-8765-4a4f-add6-bc9b1c53ca17"
+        },
+        "name": "Movie"
+      },
+      "content": "The hunt for prey begins as Sony Pictures Sony Pictures (in association with Marvel) release the second official trailer for the upcoming superhero film Kraven the Hunter. View trailer below.\n\nKraven the Hunter is the visceral, action-packed origin story of how and why one of Marvel’s most iconic villains came to be. Aaron Taylor-Johnson plays Kraven, a man whose complex relationship with his ruthless father, Nikolai Kravinoff (Russell Crowe), starts him down a path of vengeance with brutal consequences, motivating him to become not only the greatest hunter in the world, but also one of its most feared.\n\nIt’s been sometime since we last heard about this particular movie, especially with the writers / actor strike happening last summer and this movie was pulled from its intended theatrical release and delayed an entire year. So, finally, with all that said and done, the movie is now set to be released this year. This new trailer showcases plenty of new footage from the upcoming film and looks like to be a “bloody” and “visceral” film of action and thrills. This movie might even break the weak reception that Sony’s Spider-Man Universe has been plagued since its start. Let’s hope that it does and that this film proves to be quite effective.",
+      "createdAt": 1725780949818,
+      "id": "a3e594fe-fc25-4ea3-a335-ba183eb43fba",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725780949905_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=53c2ae60-df6f-4300-9998-369efd063e0b",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725780949905_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "Kraven the Hunter Official Trailer 2",
+      "updateAt": 1725780949818,
+      "views": 1
+    },
+    "a933d916-a734-4017-91b8-035225663709": {
+      "category": {
+        "id": "12",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fgaming_topic%2Fstreamline_ai-gaming-spark-solid-1.png?alt=media&token=698a7d81-59d5-48c9-9a4e-8d9cad2c8de3",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fgaming_topic%2Fstreamline_ai-gaming-spark-solid.png?alt=media&token=9fd99bbf-8613-4ec7-9dcc-1e7976f41e55"
+        },
+        "name": "Gaming"
+      },
+      "content": "Xin chào các Kiện Tướng\n\nHội Đồng xin được gửi tới các Kiện Tướng sự kiện: Giảm giá 30% combo Alice và trang phục Bé gấu tuyết. Alice sẽ mang theo cái mát đập nát cơn nóng mùa hè… hoặc tan chảy trước sức mạnh của thần mặt trời.\n\nCombo tướng Alice và trang phục Bé gấu tuyết có giá 516 quân huy thay vì 738 quân huy\n\nTrang phục Bé gấu tuyết mua riêng có giá 379 quân huy\n\nTHỜI GIAN\nTừ ngày 20/07 đến 26/07/2018",
+      "createdAt": 1725779617480,
+      "id": "a933d916-a734-4017-91b8-035225663709",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725779617530_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=0a7e7bdf-8728-45b2-ab5f-d102a831968d",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725779617530_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "Alice và trang phục bé gấu tuyết ưu đãi giảm giá 30%",
+      "updateAt": 1725779617480,
+      "views": 2
+    },
+    "b20dde38-368f-4482-a813-ebae60b93444": {
+      "category": {
+        "id": "7",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fmovie_topic%2Ftdesign_film-1.png?alt=media&token=e74ee50c-c9d8-4bb1-a72e-1a47b5641fc1",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fmovie_topic%2Ftdesign_film.png?alt=media&token=ca39fa8a-8765-4a4f-add6-bc9b1c53ca17"
+        },
+        "name": "Movie"
+      },
+      "content": "Another year older, another year wiser. Today (August 13th) is my birthday (Hooray!) and I wanted to share it with you….my fellow bloggers and readers.\n\nYes, I am 39 years old today and (yes…) I’m officially getting older, but I am still enjoying my life and happy of the life I’ve lived thus far. It’s also hard to believe that several years ago (I think it was seven or eight or maybe nine) I took a leap of faith and signed up (on WordPress) for my first movie blog…. Jason’s Movie Blog. I was always scared that no one would read my post / reviews and my passion to create a movie blog would diminish. However, that’s always been my biggest fears. Just like any artist or person who creates content, I always feared that no one would read my work and that my thoughts / viewpoints would never mean anything, especially since they are plenty of movie blogs out there on the internet. Thankfully, those fearful thoughts have been held back (or at least kept at bay) as my blog has flourished (over the years) and gets many hits each day from around the world.\n\nBut that wouldn’t mean anything if I don’t have readers, which is where you guys come in. From the bottom of heart, I just wanted to say thank you to all you guys out there. You guys read my work, like my posts, and offered your opinions on them in my comments section. I’ve grown on my social media (I do plan to expand on them and would like some help and advice on grown on their), so thanks to my followers on the various social media outlets as well as the WordPress community to my other fellow bloggers on here….\n\nAs with every year that passes by, I see all the various new movie blogs and bloggers come and go, with some been around for quit some time and I have enjoyed reading / commenting on their posts on some of their reviews. I’ve also seeing some of the bloggers abandoned their blogs and have moved on….whether they moved to a different platform, life has gotten in the way of things, or simply loss the passion; all of which are completely valid and understandable. There is no denying that sometimes it has been a struggle to keep Jason’s Movie Blog up and running, especially (several times) falling behind on my reviews due to situations that happen in my life. Yet, blogging has always helped me cope with many different things, making me a better person for it, and to instill my overall love of movies into my review posts. For that, I am eternal grateful to share my thoughts and opinions of cinematic storytelling (whether good or bad) and for all of you for reading them.\n\nIn a few weeks I will be going to my family’s villa in Costa Rica and looking to get plenty of rest and relaxation for two weeks, able to recharge my life batteries, and (of course) playing catch up on some of my movie reviews.\n\nLastly, I just renewed my plan with WordPress account. That means that Jason’s Movie Blog is up and running for another year!!! Again, thanks for following me and reading my work.\n\nSincerely…your fellow movie lover / blogger\n\nJason of Jason’s Movie Blog",
+      "createdAt": 1725781195520,
+      "id": "b20dde38-368f-4482-a813-ebae60b93444",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725781195676_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=ac094e62-b478-4a1b-b734-ad585ea8a05b",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725781195676_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "Happy Birthday 2024!!! (And Thank You Readers)",
+      "updateAt": 1725781195520,
+      "views": 0
+    },
+    "b54a504c-aa0d-4043-9c55-a9f257c0ab84": {
+      "category": {
+        "id": "6",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Ftravel_topic%2Fmaterial-symbols_travel-rounded-1.png?alt=media&token=c9bd269c-c0ec-44a7-bcb3-6142556fbc7b",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Ftravel_topic%2Fmaterial-symbols_travel-rounded.png?alt=media&token=b52f70aa-1188-4833-ad62-78afff3fe7a3"
+        },
+        "name": "Travel"
+      },
+      "content": "Lần đầu tiên đi Đài Loan, mình đã có những trải nghiệm vô cùng thú vị như ăn chợ đêm, tàu hủ thúi, ngắm cá heo và đi nhiều bảo tàng vô cùng xinh đẹp, ăn những món ăn ở những nhà hàng nổi tiếng. Cùng theo dõi hành trình 5 ngày của mình tại Đài Loan nhé.\n\nVISA VÀ MÁY BAY\n    Đây là lần đầu tiên mình đi Đài Loan. Vì mình không đủ điều kiện làm e-visa nên phải xin visa giấy. Về thủ tục thì mọi người coi clip trước của mình nhé, cũng khá là dễ, tại mình thuê công ty dịch vụ làm nhanh mà hihi. Lần đầu tiên đi lại bay được hãng xịn EVA Air luôn nhé, ngồi hạng phổ thông đặc biệt nữa chứ. Chuyến này mình đi với tư cách khách mời của Tổng cục Du lịch Đài Loan nên được chăm sóc quá kỹ luôn. Mà công nhận bay EVA Air sướng thật, chỗ ngồi thì thoải mái, đồ ăn lại ngon, đầy đủ các thứ để giải trí. Các bạn có thể lên Traveloka để check và mua vé máy bay khi đi Đài Loan nhé.\n    Tụi mình bay xuống Đài Loan là buổi chiều tối nên tranh thủ đi ăn luôn, ăn ở nhà hàng rất nổi tiếng, Xuân Thủy Đường. Nghe đâu đây là nơi khai sinh ra món trà sữa trân châu đầu tiên của thế giới. Mình thì không hợp trà sữa lắm nên cứ hào hứng với món mì bò ở đây thôi. Nước dùng ngon, bò mềm, tuy nhiên kết hợp với trà sữa thì thấy không đúng bài lắm. Trà sữa gì mà ly to quá trời to luôn.\n    Đúng là đi với Tổng cục Du lịch có khác, được sắp xếp ở khách sạn xịn sò, view ra tòa tháp nổi tiếng của Đài Bắc. Check-in khách sạn xong thì mình cũng ráng bò ra chợ đêm, vì khá khuya nên mình cũng chỉ đi dạo thôi, chứ không ăn uống gì. Tuy nhiên, đi qua quầy bia thấy thèm quá nên quất 1 ly, mà tới hơn 300 tệ, ối trời ơi luôn. Ngày đầu kết thúc thế thôi, về khách sạn ngủ, mai dậy sớm đi tới một tỉnh khác đó là Nghi Lan.\n\nNGÀY 2 LÊN ĐƯỜNG ĐI NGHI LAN\n    Ăn sáng xong, xe đưa tụi mình ra khỏi thành phố. Và phải nói, vừa mới ra khỏi thành phố thôi đã có rất nhiều mảng xanh. Cảm giác như rừng ở muôn nơi, và mình rất ấn tượng bởi cảnh thôn quê với những thửa ruộng xanh mướt. Xe chạy một hồi thì đưa mình tới một khu nước khoáng lạnh, cơ mà chỗ này vẫn chưa hoạt động lại nên ghé xíu rồi đi tiếp.\n    Đây là một trong số ít các suối lạnh trên thế giới, với nhiệt độ nước chỉ khoảng 22°C quanh năm. Nước ở suối lạnh Su’ao có chứa nhiều carbon dioxide, mang lại cảm giác sủi bọt giống như nước khoáng có gas.\n    Điểm thứ hai tụi mình đến là một nơi chế biến hải sản. Xưởng này tuy nhỏ nhưng đồ khá đa dạng và ăn rất ngon. Trong xưởng lại có một số bạn người Việt Nam đang làm việc nữa, tụi mình cũng dùng bữa tại đây, trải nghiệm một suất ăn của công nhân tại đây xem như thế nào, ăn xong nó đứng không nổi luôn.\n\nNGÀY 3 LÊN ĐƯỜNG RA ĐẠI HẢI TRÌNH\n    Sau khi ăn sáng xong, nguyên đoàn di chuyển ra cảng để chuẩn bị lên thuyền. Tàu di chuyển hơn một tiếng thì đi ngang đảo Rùa, đây là một hòn đảo bị ảnh hưởng khá nhiều do động đất. Xung quanh hòn đảo có khí lưu huỳnh nên tạo ra màu xanh rất huyền ảo, tuy nhiên mùi lưu huỳnh thì khá hôi nên ai cũng\n sợ.\n    Chạy hơn 2 tiếng thì mấy chú cá heo bắt đầu xuất hiện. Đợt này mình đi, cá bơi từng đàn nhỏ và khá xa thuyền nên đi theo mệt nghỉ, canh lắm mới chụp được mấy tấm hình.",
+      "createdAt": 1725779144856,
+      "id": "b54a504c-aa0d-4043-9c55-a9f257c0ab84",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725779144939_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=e2af8e53-9b17-4c43-815c-26ffefda9693",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725779144939_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "Du Lịch Đài Loan 5 Ngày 4 Đêm: Đi Đâu Và Trải Nghiệm Gì?",
+      "updateAt": 1725779144856,
+      "views": 1
+    },
+    "b5c532ce-278e-4be3-8294-b09bc99f3e78": {
+      "category": {
+        "id": "1",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fsport_topic%2Fgame-icons_sport-medal-1.png?alt=media&token=fc9060db-989e-409a-ad2f-5f4b7d263c8e",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fsport_topic%2Fgame-icons_sport-medal.png?alt=media&token=2018bc56-765a-4024-9cd4-463fc7a2ff76"
+        },
+        "name": "Sport"
+      },
+      "content": "And the manner was everything. Even though it took a penalty shootout for Leverkusen to lift the fifth major trophy of the club’s 120-year history (and the third in the last four months under Xabi Alonso), the way in which Die Werkself got there suggested that we are probably not looking at a one-hit wonder. They played all but the first 37 minutes against Stuttgart with 10 men at the BayArena – debutant Martin Terrier was sent off for an ill-considered, studs-up lunge – and trailed midway through the second half when Deniz Undav gave the visitors the lead with his first touch.\n\nYet there was no hint of panic, no launching it in the mixer. Leverkusen passed their way around their opponents looking for an opening, even with time running out, until Schick coolly sidefooted in after a dazzling move with little more than a minute to go in normal time. It was another Leverkusen late show (after so many last-gasp goals against Bayern Munich, Borussia Dortmund, Hoffenheim, Qarabag, Leipzig, Stuttgart, is it even a surprise now?) with the Czech striker as so often the man on the spot.",
+      "createdAt": 1725780487493,
+      "id": "b5c532ce-278e-4be3-8294-b09bc99f3e78",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725780487565_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=9ba0562d-5ebf-4502-bf88-dc06a874e7f9",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725780487565_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "Leverkusen the Bundesliga team to beat despite Bayern’s summer spree",
+      "updateAt": 1725780487493,
+      "views": 0
+    },
+    "f8f99f37-0fde-4050-a406-0ee9339c7742": {
+      "category": {
+        "id": "11",
+        "img": {
+          "active": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fscience_topic%2Fmingcute_science-line-1.png?alt=media&token=62280e39-1284-4377-b3e1-45a64a20add9",
+          "unActive": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/icon%2Fcategory%2Fscience_topic%2Fmingcute_science-line.png?alt=media&token=b2477e89-1d75-45c4-9484-bab6b699dec9"
+        },
+        "name": "Science"
+      },
+      "content": "NASA’s Earth Science Division (ESD) missions help us to understand our planet’s interconnected systems, from a global scale down to minute processes.\n\nESD delivers the technology, expertise, global observations, and applications that help us map the myriad connections between our planet’s vital processes and the climate effects of ongoing natural and human-caused changes.\n\nUsing observations from satellites, instruments on the International Space Station, airplanes, balloons, ships and on land, ESD researchers collect data about the science of our planet’s atmospheric motion and composition; land cover, land use and vegetation; ocean currents, temperatures and upper-ocean life; and ice on land and sea. These data sets, which cover even the most remote areas of Earth, are freely and openly available to anyone.\n\nESD offers end-to-end development, launch, data collection, analysis, and application of its missions, including those with partners in U.S. and international government, and the private sector. ESD also sponsors research and extends science and technology education to learners of all ages, inspiring the next generation of explorers.\n\nScience Questions\nNASA’s Science Mission Directorate Strategic Plan reflects the agency’s science agenda, as proscribed by the Executive and Legislative branches. Published every four years, the SMD plan is designed to complement the agency’s overall strategic plan and is informed by the most recent Decadal Survey.\n\nNASA’s strategic objective for Earth science is to advance knowledge of Earth as a system in order to meet the challenges of environmental change and to improve life on our planet.\n\nThe Earth Science Division (ESD) programs address this objective by asking the following key science questions:\n\nHow is the global Earth system changing?\nWhat causes these changes in the Earth system?\nHow will the Earth system change in the future?\nHow can Earth system science provide societal benefit?",
+      "createdAt": 1725781725474,
+      "id": "f8f99f37-0fde-4050-a406-0ee9339c7742",
+      "idAuthor": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "linkMedia": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/post%2FxdPVyHaq0dh9zgz19x8YoHPeeqO2%2F1725781725560_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp?alt=media&token=a4466810-f295-4655-9fbb-da2fdc3c886a",
+      "mediaLocation": "gs://socialblog-4693a.appspot.com/post/xdPVyHaq0dh9zgz19x8YoHPeeqO2/1725781725560_xdPVyHaq0dh9zgz19x8YoHPeeqO2.webp",
+      "public": true,
+      "title": "NASA Earth Science For our research community",
+      "updateAt": 1725781725474,
+      "views": 1
+    }
+  },
+  "Users": {
+    "6EFZvQa3pqWPGwHWiFfv9ywokyt1": {
+      "avatar": "https://images.unsplash.com/photo-1543610892-0b1f7e6d8ac1?q=80&w=1856&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "cratedAccountAt": 1725158228350,
+      "email": "lothanhduy2003@gmail.com",
+      "exemplaryPoint": 1000,
+      "idUser": "6EFZvQa3pqWPGwHWiFfv9ywokyt1",
+      "password": "123",
+      "userName": "ThanhDuy"
+    },
+    "xdPVyHaq0dh9zgz19x8YoHPeeqO2": {
+      "avatar": "https://firebasestorage.googleapis.com/v0/b/socialblog-4693a.appspot.com/o/avatar%2Favatar_default.png?alt=media&token=476aeb23-4163-4c55-a326-c65bb3836cc6",
+      "cratedAccountAt": 1725710158976,
+      "email": "nguyenvana@gmail.com",
+      "exemplaryPoint": 1000,
+      "idUser": "xdPVyHaq0dh9zgz19x8YoHPeeqO2",
+      "password": "0123456789",
+      "userName": "Nguyen Van A"
+    }
+  }
+}
