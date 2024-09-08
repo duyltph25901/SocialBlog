@@ -106,7 +106,6 @@ class PostDetailViewModel : ViewModel() {
             override fun onDataChange(dataSnapshot: DataSnapshot) {
                 val listUsersModelDto = getListUserFromSnapShot(dataSnapshot)
                 _users.postValue(listUsersModelDto)
-                Log.d("duylt", "$listUsersModelDto")
             }
 
             override fun onCancelled(error: DatabaseError) =
@@ -217,8 +216,6 @@ class PostDetailViewModel : ViewModel() {
         list.forEach { id ->
             result += "$id, "
         }
-
-        Log.d("duylt", result)
 
         return result
     }
