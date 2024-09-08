@@ -86,10 +86,13 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding>() {
         textLikes.text =
             if (isLikesHigherThanOne(post)) "${getLikesOfPost(post)} ${getTextLikesRes()}" else getTextLike(post.post.listIdUserLiked.size)
         submitListCommentAdapter(post.listComment)
-
         if (isIdReaderSameIdAuthor(post)) goneButtonFollow()
         else visibleButtonFollow()
+        textTitleComment.text = getTextCommentRes()
     }
+
+    private fun getTextCommentRes() =
+        getString(R.string.comments)
 
     private fun toastMessageInComing() = toastMessageRes(R.string.this_feature_will_be_released_soon)
 

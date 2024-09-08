@@ -54,7 +54,7 @@
             app:layout_constraintStart_toStartOf="@id/textTellMeWhoYouAre" />
 
         <EditText
-            android:text="lothanhduy2003@gmail.com"
+            android:text="nguyenvana@gmail.com"
             android:id="@+id/inputEmailAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -77,7 +77,7 @@
             tools:ignore="Autofill,UnusedAttribute" />
 
         <EditText
-            android:text="123"
+            android:text="0123456789"
             android:id="@+id/inputPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
