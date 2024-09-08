@@ -10,6 +10,8 @@
     <color name="text_green">#00DDB3</color>
     <color name="black_al_60">#99000000</color>
     <color name="lightTransparent">#16000000</color>
-    <color name="colorAds">#00DDB3</color>
+    <color name="colorAds">#FF1B2251</color>
     <color name="stockCard">#5E58595A</color>
+    <color name="text_dark_blue">#FF1B2251</color>
+    <color name="text_orange">#FFFF8600</color>
 </resources>

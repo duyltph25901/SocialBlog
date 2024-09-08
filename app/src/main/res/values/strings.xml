@@ -1,10 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
-    <string name="app_name">Social <font color="#00DDB3">Blogger</font></string>
+    <string name="app_name">Social <font color="#FF1B2251">Blogger</font></string>
     <string name="next">Next</string>
-    <string name="title_ob_1">Revamp your mobile typing experience with Keyboard Font &amp; Theme!</string>
-    <string name="title_ob_2">Customize your keyboard easily by choosing from a wide array of fonts and themes</string>
-    <string name="title_ob_3">DIY keyboard - Let your personality shine through every keystroke!</string>
-    <string name="title_ob_4">Thousands of free keyboard background templates</string>
+    <string name="title_ob_1">Dive into a world of engaging and popular blog posts. Explore topics that matter to you and stay updated with the latest trends.</string>
+    <string name="title_ob_2">Connect with passionate individuals who share your interests. Follow your favorite bloggers and participate in lively discussions.</string>
+    <string name="title_ob_3">Express yourself by creating and sharing your own blog posts. Your ideas and insights are valuable to our community.</string>
+    <string name="title_ob_4">Get real-time notifications about new posts, comments, and interactions. Stay connected with your favorite content and conversations.</string>
     <string name="please_tell_me_who_you_are">Please tell me who you are</string>
     <string name="login">Login</string>
     <string name="example_email_gmail_dot_com">example_email@gmail.com</string>

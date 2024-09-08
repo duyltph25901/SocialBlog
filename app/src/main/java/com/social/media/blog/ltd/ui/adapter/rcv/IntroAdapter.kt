@@ -21,26 +21,7 @@ class IntroAdapter : BaseRecyclerView<IntroModelDomain>() {
     override fun setData(binding: ViewDataBinding, item: IntroModelDomain, layoutPosition: Int) {
         if (binding is ItemOnBoardingBinding) {
             binding.tvTitle.text = context?.getString(item.titleResource)
-            context?.let {
-                Glide.with(it).load(it.getDrawable(item.imgDrawableResource))
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .addListener(object : RequestListener<Drawable> {
-                        override fun onLoadFailed(
-                            e: GlideException?,
-                            model: Any?,
-                            target: Target<Drawable>,
-                            isFirstResource: Boolean
-                        ): Boolean = false
-
-                        override fun onResourceReady(
-                            resource: Drawable,
-                            model: Any,
-                            target: Target<Drawable>?,
-                            dataSource: DataSource,
-                            isFirstResource: Boolean
-                        ): Boolean = false
-                    }).into(binding.imgGuide)
-            }
+            binding.imgGuide.setAnimation(item.rawRes)
         }
     }
 

@@ -48,7 +48,7 @@
             android:layout_marginBottom="@dimen/_8sdp"
             android:fontFamily="@font/font_extra_bold"
             android:text="@string/login"
-            android:textColor="@color/text_green"
+            android:textColor="@color/text_dark_blue"
             android:textSize="@dimen/_24ssp"
             app:layout_constraintBottom_toTopOf="@id/textTellMeWhoYouAre"
             app:layout_constraintStart_toStartOf="@id/textTellMeWhoYouAre" />
@@ -63,7 +63,7 @@
             android:background="@drawable/bg_input"
             android:drawableStart="@drawable/ic_mail"
             android:drawablePadding="@dimen/_8sdp"
-            android:drawableTint="@color/primary"
+            android:drawableTint="@color/text_dark_blue"
             android:hint="@string/example_email_gmail_dot_com"
             android:imeOptions="actionNext"
             android:inputType="textEmailAddress"
@@ -86,7 +86,7 @@
             android:background="@drawable/bg_input"
             android:drawableStart="@drawable/ic_password"
             android:drawablePadding="@dimen/_8sdp"
-            android:drawableTint="@color/primary"
+            android:drawableTint="@color/text_dark_blue"
             android:hint="@string/password"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
@@ -120,7 +120,7 @@
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/_16sdp"
             android:layout_marginTop="@dimen/_12sdp"
-            android:background="@drawable/bg_green"
+            android:background="@drawable/bg_dark_blue"
             android:elevation="@dimen/_3sdp"
             android:gravity="center"
             android:orientation="vertical"
@@ -162,7 +162,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/font_semi_bold"
                 android:text="@string/register_account"
-                android:textColor="@color/text_green"
+                android:textColor="@color/text_dark_blue"
                 android:textSize="@dimen/_12ssp" />
 
         </LinearLayout>

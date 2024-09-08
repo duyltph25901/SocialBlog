@@ -18,10 +18,10 @@ class IntroViewModel : ViewModel() {
 
     fun fetchDataIntro() = viewModelScope.launch(Dispatchers.IO) {
         _introList.postValue(mutableListOf<IntroModelDomain>().apply {
-            add(IntroModelDomain(R.drawable.img_ob_1, R.string.title_ob_1))
-            add(IntroModelDomain(R.drawable.img_ob_2, R.string.title_ob_2))
-            add(IntroModelDomain(R.drawable.img_ob_3, R.string.title_ob_3))
-            add(IntroModelDomain(R.drawable.img_ob_4, R.string.title_ob_4))
+            add(IntroModelDomain(R.raw.anim_ob_1, R.string.title_ob_1))
+            add(IntroModelDomain(R.raw.anim_ob_2, R.string.title_ob_2))
+            add(IntroModelDomain(R.raw.anim_ob_3, R.string.title_ob_3))
+            add(IntroModelDomain(R.raw.anim_ob_4, R.string.title_ob_4))
         })
     }
 
