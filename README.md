@@ -82,6 +82,9 @@
 ### Firebase Realtime Database Sample JSON
 You can download the sample JSON file from ../BlogApp/app/data_firebase.json and then, you can import this file to your firebase
 
+### APK file demo
+You can get the apk file from ../BlogApp/app/apk_demo/SocialBlogger_v1.0.0_v100_09.08.2024-debug.apk and then, you can download and use app
+
 ### SUPER NOTEEEEEE:
 This application is not suitable for those who do not know the MVVM model, but if you are not interested in code, just download this project and study it. The project may have some bugs during development, but I guarantee that the main flow of the project will not be affected.
 
