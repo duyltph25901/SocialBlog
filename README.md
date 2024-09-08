@@ -1,5 +1,4 @@
 # App Screenshots
-
 <table>
   <tr>
     <td>
@@ -72,3 +71,11 @@
     </td>
   </tr>
 </table>
+
+## Technologies Used
+- **Database**: Firebase Realtime Database
+- **Image_Storage**: Firebase Storage
+- **Authentication**: Firebase Authentication
+
+### Firebase Realtime Database Sample JSON
+You can download the sample JSON file from ../BlogApp/app/data_firebase.json and then, you can import this file to your firebase
