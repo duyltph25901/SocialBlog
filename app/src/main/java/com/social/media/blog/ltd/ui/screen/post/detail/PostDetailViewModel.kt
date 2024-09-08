@@ -2,6 +2,7 @@ package com.social.media.blog.ltd.ui.screen.post.detail
 
 import android.content.Context
 import android.content.Intent
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -22,6 +23,7 @@ import com.social.media.blog.ltd.model.dto.UserModelDTO
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.cancel
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlin.coroutines.resume
 import kotlin.coroutines.suspendCoroutine
@@ -29,6 +31,13 @@ import kotlin.coroutines.suspendCoroutine
 class PostDetailViewModel : ViewModel() {
     private val _postModelDomain = MutableLiveData<PostModelDomain>()
     private val _isLoading = MutableLiveData<Boolean>()
+    private val _users = MutableLiveData<MutableList<UserModelDTO>>()
+
+    private val eventListenerUerRef: ValueEventListener
+
+    init {
+        eventListenerUerRef = createListenerUserRef()
+    }
 
     val postModelDomain: LiveData<PostModelDomain> = _postModelDomain
     val isLoading: LiveData<Boolean> = _isLoading
@@ -59,7 +68,10 @@ class PostDetailViewModel : ViewModel() {
         viewModelScope.async(Dispatchers.IO) {
             val listComments =
                 mutableListOf<PostModelDomain.CommentModelDomain>()
-            val listUser = fetchUsersDto()
+            userRef.addValueEventListener(eventListenerUerRef)
+            delay(3000)
+            userRef.removeEventListener(eventListenerUerRef)
+            val listUser = _users.value ?: mutableListOf()
             val author = listUser.find { it.idUser == post.idAuthor } ?: UserModelDTO()
             for (i in post.listComments.indices) {
                 for (j in listUser.indices) {
@@ -78,18 +90,16 @@ class PostDetailViewModel : ViewModel() {
             return@async Pair(listComments.sortedByDescending { it.comment.commentedAt }.toMutableList(), author)
         }
 
-    private suspend fun fetchUsersDto(): MutableList<UserModelDTO> =
-        suspendCoroutine { continuation ->
-            userRef.addValueEventListener(object : ValueEventListener {
-                override fun onDataChange(dataSnapshot: DataSnapshot) {
-                    val listUsersModelDto = getListUserFromSnapShot(dataSnapshot)
+    private fun createListenerUserRef() =
+        object : ValueEventListener {
+            override fun onDataChange(dataSnapshot: DataSnapshot) {
+                val listUsersModelDto = getListUserFromSnapShot(dataSnapshot)
+                _users.postValue(listUsersModelDto)
+                Log.d("duylt", "$listUsersModelDto")
+            }
 
-                    continuation.resume(listUsersModelDto)
-                }
-
-                override fun onCancelled(error: DatabaseError) =
-                    continuation.resume(mutableListOf())
-            })
+            override fun onCancelled(error: DatabaseError) =
+                _users.postValue(mutableListOf())
         }
 
     private fun getListUserFromSnapShot(dataSnapshot: DataSnapshot): MutableList<UserModelDTO> {
