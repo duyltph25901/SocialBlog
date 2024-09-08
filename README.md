@@ -43,4 +43,32 @@
       <img src="https://github.com/user-attachments/assets/3b20801e-cbe7-44f5-841b-806774b35d57" width="200"/>
     </td>
   </tr>
+  <tr>
+    <td>
+      <h3>Choose Image</h3>
+      <img src="https://github.com/user-attachments/assets/7d0c9cc2-7358-47fd-b83f-191140346ccc" width="200"/>
+    </td>
+    <td>
+      <h3>Crop</h3>
+      <img src="https://github.com/user-attachments/assets/78ad1b47-359d-492c-b3f6-96a7219252c5" width="200"/>
+    </td>
+    <td>
+      <h3>Camera</h3>
+      <img src="https://github.com/user-attachments/assets/e29f7463-257e-4079-97d4-f203b249259d" width="200"/>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h3>Change Category</h3>
+      <img src="https://github.com/user-attachments/assets/475bfea8-ce6a-4023-acc2-25a784c01656" width="200"/>
+    </td>
+    <td>
+      <h3>Change Mode</h3>
+      <img src="https://github.com/user-attachments/assets/dde3d007-8845-4071-9d8e-734410aeb3fe" width="200"/>
+    </td>
+    <td>
+      <h3>Save</h3>
+      <img src="https://github.com/user-attachments/assets/e2d84a80-6558-4ad4-aabe-4e62ead3f7aa" width="200"/>
+    </td>
+  </tr>
 </table>
