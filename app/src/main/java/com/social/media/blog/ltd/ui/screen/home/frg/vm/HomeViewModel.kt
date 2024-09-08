@@ -84,10 +84,10 @@ class HomeViewModel : ViewModel() {
         override fun onDataChange(snapshot: DataSnapshot) {
             val listPosts = getListPostsFromSnapShot(snapshot)
             _posts.postValue(
-                listPosts.sortedByDescending { it.listIdUserLiked.size }.take(10).toMutableList()
+                listPosts.asSequence().filter { it.isPublic }.sortedByDescending { it.listIdUserLiked.size }.take(10).toMutableList()
             )
             _postRecentlyNews.postValue(
-                listPosts.sortedByDescending { it.createdAt}.toMutableList().take(15).toMutableList()
+                listPosts.asSequence().filter { it.isPublic }.sortedByDescending { it.createdAt}.toMutableList().take(15).toMutableList()
             )
         }
 
