@@ -1,5 +1,4 @@
 # App Screenshots
-
 <table>
   <tr>
     <td>
@@ -72,3 +71,21 @@
     </td>
   </tr>
 </table>
+
+## Technologies Used
+- **Database**: Firebase Realtime Database
+- **Image_Storage**: Firebase Storage
+- **Authentication**: Firebase Authentication
+- **Language_Coding**: Kotlin (100%)
+- **Architecture**: MVVM
+
+### Firebase Realtime Database Sample JSON
+You can download the sample JSON file from ../BlogApp/app/data_firebase.json and then, you can import this file to your firebase
+
+### SUPER NOTEEEEEE:
+This application is not suitable for those who do not know the MVVM model, but if you are not interested in code, just download this project and study it. The project may have some bugs during development, but I guarantee that the main flow of the project will not be affected.
+
+## Contact
+If you have any questions or suggestions, feel free to contact me:
+- **Email**: [beedyto@gmail.com](mailto:beedyto@gmail.com)
+- **Facebook**: [Duy Thành](https://www.facebook.com/dyto.bee)
