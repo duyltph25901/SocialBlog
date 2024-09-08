@@ -86,4 +86,7 @@ dependencies {
     implementation 'com.makeramen:roundedimageview:2.3.0'
     // ucrop
     implementation 'com.vanniktech:android-image-cropper:4.6.0'
+    // room
+    implementation "androidx.room:room-runtime:2.4.3"
+    kapt "androidx.room:room-compiler:2.4.3"
 }

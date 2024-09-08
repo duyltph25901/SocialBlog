@@ -17,9 +17,13 @@ import com.social.media.blog.ltd.commons.AppConst.postRef
 import com.social.media.blog.ltd.commons.AppConst.userRef
 import com.social.media.blog.ltd.commons.SharedUtils
 import com.social.media.blog.ltd.commons.extention.convertJsonToObject
+import com.social.media.blog.ltd.commons.extention.convertObjectToJson
+import com.social.media.blog.ltd.database.AppDatabase
+import com.social.media.blog.ltd.database.repository.PostRepository
 import com.social.media.blog.ltd.model.domain.PostModelDomain
 import com.social.media.blog.ltd.model.dto.PostModelDTO
 import com.social.media.blog.ltd.model.dto.UserModelDTO
+import com.social.media.blog.ltd.model.entities.PostSaveEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.async
 import kotlinx.coroutines.cancel
@@ -32,15 +36,19 @@ class PostDetailViewModel : ViewModel() {
     private val _postModelDomain = MutableLiveData<PostModelDomain>()
     private val _isLoading = MutableLiveData<Boolean>()
     private val _users = MutableLiveData<MutableList<UserModelDTO>>()
+    private val _isSaved = MutableLiveData<Boolean>()
 
     private val eventListenerUerRef: ValueEventListener
+
+    private lateinit var postRepository: PostRepository
+
+    val postModelDomain: LiveData<PostModelDomain> = _postModelDomain
+    val isLoading: LiveData<Boolean> = _isLoading
+    val isSaved: LiveData<Boolean> = _isSaved
 
     init {
         eventListenerUerRef = createListenerUserRef()
     }
-
-    val postModelDomain: LiveData<PostModelDomain> = _postModelDomain
-    val isLoading: LiveData<Boolean> = _isLoading
 
     fun getValuePostModelDomain(intent: Intent) = viewModelScope.launch(Dispatchers.IO) {
         showLoading()
@@ -59,6 +67,9 @@ class PostDetailViewModel : ViewModel() {
                 author = author
             )
             _postModelDomain.postValue(postModelDomainTemp)
+
+            val isUserSavedPostBefore = isUserSavedPostBefore(postModelDomainTemp.post.id)
+            _isSaved.postValue(isUserSavedPostBefore)
         }
         hideLoading()
         cancel()
@@ -163,4 +174,67 @@ class PostDetailViewModel : ViewModel() {
 
     fun refreshPostModelDomainLikeOrUnLike(postModelDto: PostModelDTO) =
         postModelDto.also { _postModelDomain.value?.post = it }
+
+    fun initPostRepository(context: Context) {
+        val postDao = AppDatabase.getInstance(context).postDao()
+        postRepository = PostRepository(postDao)
+    }
+
+    private suspend fun isUserSavedPostBefore(idPost: String) =
+        postRepository.isUserSavePostBefore(idPost)
+
+    fun savePost(post: PostModelDTO, context: Context) = viewModelScope.launch(Dispatchers.IO) {
+        val postEntity = PostSaveEntity(
+            id = post.id,
+            idAuthor = post.idAuthor,
+            title = post.title,
+            content = post.content,
+            linkMedia = post.linkMedia,
+            mediaLocation = post.mediaLocation,
+            views = post.views,
+            isPublic = post.isPublic,
+            createdAt = post.createdAt,
+            updateAt = post.updateAt,
+            listIdUserLiked = convertListIdUserLikedToString(post.listIdUserLiked),
+            listComments = convertListCommentToString(post.listComments, context),
+            category = convertObjectToJson(post.category, context)
+        )
+        postRepository.savePost(postEntity)
+        _isSaved.postValue(true)
+        cancel()
+    }
+
+    fun unSavePost(post: PostModelDTO) = viewModelScope.launch(Dispatchers.IO) {
+        val idPost = post.id
+        postRepository.unSavePost(idPost)
+        _isSaved.postValue(false)
+        cancel()
+    }
+
+    private fun convertListIdUserLikedToString(list: MutableList<String>): String {
+        var result = ""
+
+        list.forEach { id ->
+            result += "$id, "
+        }
+
+        Log.d("duylt", result)
+
+        return result
+    }
+
+    private fun convertListCommentToString(comments: MutableList<PostModelDTO.Comment>, context: Context): String {
+        var result = ""
+
+        comments.forEach { comment ->
+            val jsonComment = convertObjectToJson(comment, context)
+            result += "$jsonComment |||"
+        }
+
+        return result
+    }
+
+    private fun <T> convertObjectToJson(obj: T, context: Context): String =
+        context.convertObjectToJson(obj)
+
 }

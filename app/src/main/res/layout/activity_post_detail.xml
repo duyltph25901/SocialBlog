@@ -32,6 +32,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@id/icBack" />
 
+        <ImageView
+            android:id="@+id/icBookMark"
+            android:layout_width="@dimen/_24sdp"
+            android:layout_height="@dimen/_24sdp"
+            android:layout_marginEnd="@dimen/_12sdp"
+            android:contentDescription="@string/app_name"
+            android:src="@drawable/state_ic_book_mark"
+            app:layout_constraintBottom_toBottomOf="@id/icFavorite"
+            app:layout_constraintEnd_toStartOf="@id/icFavorite"
+            app:layout_constraintTop_toTopOf="@id/icFavorite" />
+
         <TextView
             android:id="@+id/textLikes"
             android:layout_width="wrap_content"
@@ -195,7 +206,7 @@
                     android:fontFamily="@font/font_regular"
                     android:textColor="@color/text_dark"
                     android:textSize="@dimen/_14ssp"
-                    app:layout_constraintTop_toBottomOf="@id/containerImage"/>
+                    app:layout_constraintTop_toBottomOf="@id/containerImage" />
 
                 <TextView
                     android:id="@+id/textTitleComment"
@@ -204,11 +215,11 @@
                     android:layout_marginStart="@dimen/_16sdp"
                     android:layout_marginTop="@dimen/_16sdp"
                     android:fontFamily="@font/font_medium"
-                    tools:text="@string/comments"
                     android:textColor="@color/text_dark"
                     android:textSize="@dimen/_16ssp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/textContentPost" />
+                    app:layout_constraintTop_toBottomOf="@id/textContentPost"
+                    tools:text="@string/comments" />
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcvComment"

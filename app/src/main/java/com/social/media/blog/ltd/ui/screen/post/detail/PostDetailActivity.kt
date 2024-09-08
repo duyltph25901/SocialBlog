@@ -38,6 +38,7 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding>() {
     override fun initVariable() {
         initCommentAdapter()
         initDialogLoading()
+        initRepository()
     }
 
     override fun initView() {
@@ -53,6 +54,10 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding>() {
         isLoading.observe(this@PostDetailActivity) { loading ->
             if (loading) this@PostDetailActivity.showLoading() else this@PostDetailActivity.hideLoading()
         }
+
+        isSaved.observe(this@PostDetailActivity) { saved ->
+            binding.icBookMark.isActivated = saved
+        }
     }
 
     override fun clickViews() = binding.apply {
@@ -61,7 +66,23 @@ class PostDetailActivity : BaseActivity<ActivityPostDetailBinding>() {
         inputComment.addTextChangedListener(getTextWatcher())
         iconSend.click { eventSendComment() }
         buttonFollow.click { toastMessageInComing() }
+        icBookMark.click { eventSavePost() }
     }
+
+    private fun eventSavePost() {
+        if (isUserSavedPostBefore()) unSave(getPostModelDtoFromPostModelDomain())
+        else save(getPostModelDtoFromPostModelDomain())
+    }
+
+    private fun unSave(postModelDto: PostModelDTO) =
+        viewModel.unSavePost(postModelDto)
+
+    private fun save(postModelDto: PostModelDTO) = viewModel.savePost(postModelDto, this)
+
+    private fun isUserSavedPostBefore() = binding.icBookMark.isActivated
+
+    private fun initRepository() =
+        viewModel.initPostRepository(this@PostDetailActivity)
 
     private fun initDialogLoading() {
         dialogLoading = LoadingResponseDialog(this, false)
