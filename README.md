@@ -1,5 +1,5 @@
 <h1>Screen</h1><br>
-<h6>Splash</h6>![image](https://github.com/user-attachments/assets/c0f8a893-2662-4c76-b26b-6a7b9bd424b5)
+<h6>Splash</h6> <img src="https://github.com/user-attachments/assets/c0f8a893-2662-4c76-b26b-6a7b9bd424b5" />
 <br>
 <h6>Intro</h6>![image](https://github.com/user-attachments/assets/c51c13a3-8e0d-4554-aed4-9403868d36ad)
 <br>
